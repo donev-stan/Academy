@@ -1,3 +1,9 @@
+// Im not using it in the code but if there were more elements it would be better to have them grouped here
+const elements = {
+	tbody: () => document.querySelector("tbody"),
+	terms: () => document.getElementById("terms-error"),
+};
+
 function onFormSubmit(event, form) {
 	// To stop the page from refreshing since thats the default behavior when a form is submitted
 	event.preventDefault();
@@ -42,10 +48,33 @@ function onFormSubmit(event, form) {
 		const td = document.createElement("td");
 
 		if (key === "date") {
-			td.innerHTML = `${day.value} <br> <b>${value}</b>`;
+			const tds = elements.tbody().querySelectorAll("td");
+
+			let skipTdDate = false;
+
+			// Iterate through all the table data elements
+			for (const [num, td] of tds.entries()) {
+				// Check if their textContent === to the one passed from the form
+				if (checkForEqualDates(td, value)) {
+					// If so increase the rowspan so the new table data goes to the same date
+					td.rowSpan += 1;
+
+					// Set this to true
+					skipTdDate = true;
+				}
+			}
+
+			if (skipTdDate) {
+				td.remove();
+			} else {
+				td.innerHTML = `${day.value} <br> <b>${changeDateFormat(
+					value
+				)}</b>`;
+			}
 		} else {
 			// Set Table Data (Column)
-			td.innerHTML = value;
+			td.textContent = value;
+			// I am not using .innerHTML here because it is dangerous since the user can write something that could break the app
 		}
 
 		// Append Table Data (Column) to Table Row
@@ -56,7 +85,19 @@ function onFormSubmit(event, form) {
 	tbody.appendChild(tr);
 
 	// Clear Inputs
-	document.querySelector("form").reset();
+	form.reset();
+	// document.querySelector("form").reset();
+}
+
+function checkForEqualDates(td, value) {
+	return td.textContent
+		.split(" ")
+		.find((date) => date === changeDateFormat(value));
+}
+
+function changeDateFormat(date) {
+	const [year, month, day] = date.split("-");
+	return `${day}.${month}.${year}`;
 }
 
 function onInputChange(event) {
@@ -65,4 +106,12 @@ function onInputChange(event) {
 	} else {
 		event.target.classList.add("good");
 	}
+}
+
+function checkForDateOnTable() {
+	elements.tbody();
+}
+
+function test() {
+	console.log(elements.tbody().querySelectorAll("tr"));
 }
