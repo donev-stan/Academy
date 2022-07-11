@@ -107,11 +107,3 @@ function onInputChange(event) {
 		event.target.classList.add("good");
 	}
 }
-
-function checkForDateOnTable() {
-	elements.tbody();
-}
-
-function test() {
-	console.log(elements.tbody().querySelectorAll("tr"));
-}
