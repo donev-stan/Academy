@@ -1,0 +1,47 @@
+#title {
+	text-align: center;
+}
+
+#hr {
+	margin: 0 1%;
+	border-top: 1px solid black;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:visited {
+	color: tomato;
+}
+
+nav {
+	display: flex;
+	justify-content: flex-start;
+	flex: 1;
+}
+
+#nav-notes {
+	display: flex;
+	flex-direction: row;
+    padding: 50px;
+    padding-bottom: 0;
+}
+
+#notes {
+	align-items: flex-start;
+	flex: 2;
+}
+
+@media (max-width: 768px) {
+	nav {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 1000px) {
+	#nav-notes {
+        flex-direction: column;
+	}
+}
