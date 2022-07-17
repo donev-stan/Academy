@@ -53,59 +53,59 @@
 .fadeout10 {
 	position: absolute;
 	height: 100%;
-	width: 5px;
+	width: 7px;
 	right: 0;
 	opacity: 1;
 	background-color: white;
 }
 
 .fadeout1 {
-	right: 5px;
+	right: 7px;
 	opacity: 0.9;
 }
 
 .fadeout2 {
-	right: 10px;
+	right: 14px;
 	opacity: 0.8;
 }
 
 .fadeout3 {
-	right: 15px;
+	right: 21px;
 	opacity: 0.7;
 }
 
 .fadeout4 {
-	right: 20px;
+	right: 28px;
 	opacity: 0.6;
 }
 
 .fadeout5 {
-	right: 25px;
+	right: 35px;
 	opacity: 0.5;
 }
 
 .fadeout6 {
-	right: 30px;
+	right: 42px;
 	opacity: 0.4;
 }
 
 .fadeout7 {
-	right: 35px;
+	right: 49px;
 	opacity: 0.3;
 }
 
 .fadeout8 {
-	right: 40px;
+	right: 56px;
 	opacity: 0.2;
 }
 
 .fadeout9 {
-	right: 45px;
+	right: 63px;
 	opacity: 0.1;
 }
 
 .fadeout10 {
-	right: 50px;
+	right: 70px;
 	opacity: 0;
 }
 
