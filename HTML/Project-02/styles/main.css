@@ -2,6 +2,10 @@
 	flex-direction: column;
 }
 
+#introduction p {
+	text-indent: 2em;
+}
+
 article {
 	padding: 50px;
 	display: flex;
@@ -34,7 +38,7 @@ article {
 }
 
 .img-container img {
-	max-width: 80%;
+	width: 80%;
 	height: auto;
 	border-radius: 10px;
 	box-shadow: 0 13px 27px -5px hsl(240deg 30% 28% / 25%),
@@ -86,8 +90,16 @@ article {
 	}
 }
 
+@media (max-width: 500px) {
+	.img-container img {
+		width: 100%;
+		height: auto;
+	}
+}
+
 @media (max-width: 1000px) {
 	article {
 		flex-direction: column;
 	}
 }
+

@@ -50,6 +50,7 @@ function onFormSubmit(event, form) {
 		if (key === "date") {
 			const tds = elements.tbody().querySelectorAll("td");
 
+			/*
 			let skipTdDate = false;
 
 			// Iterate through all the table data elements
@@ -71,6 +72,12 @@ function onFormSubmit(event, form) {
 					value
 				)}</b>`;
 			}
+
+			*/
+
+			td.innerHTML = `${day.value} <br> <b>${changeDateFormat(
+				value
+			)}</b>`;
 		} else {
 			// Set Table Data (Column)
 			td.textContent = value;
@@ -89,11 +96,13 @@ function onFormSubmit(event, form) {
 	// document.querySelector("form").reset();
 }
 
+/*
 function checkForEqualDates(td, value) {
 	return td.textContent
 		.split(" ")
 		.find((date) => date === changeDateFormat(value));
 }
+*/
 
 function changeDateFormat(date) {
 	const [year, month, day] = date.split("-");
