@@ -4,7 +4,7 @@ header {
 	position: sticky;
 	top: 0;
 	background-color: white;
-    z-index: 1;
+	z-index: 1;
 }
 
 .logo,
@@ -13,7 +13,7 @@ header {
 	display: flex;
 	flex: 1;
 
-    /* border: 1px solid salmon; */
+	/* border: 1px solid salmon; */
 }
 
 .logo {
@@ -24,7 +24,7 @@ header {
 	width: 115px;
 	height: 35px;
 	cursor: pointer;
-    /* content: url("../images/full_logo.png"); */
+	/* content: url("../images/full_logo.png"); */
 }
 
 .middle-menu {
@@ -75,7 +75,7 @@ header {
 .right-menu button {
 	cursor: pointer;
 	padding: 8px 5px 8px 12px;
-    margin-left: 5px;
+	margin-left: 5px;
 	display: flex;
 	gap: 10px;
 	background-color: white;
@@ -83,17 +83,19 @@ header {
 	border-radius: 50px;
 	align-items: center;
 }
+
 .right-menu button:hover {
 	transition: box-shadow 0.2s ease;
 	box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
 }
 
-.right-menu button i {
+.right-menu button .fa-bars,
+.right-menu .fa-circle-user {
 	font-size: large;
 	color: gray;
 }
 
-.right-menu button i:last-child {
+.right-menu button .fa-circle-user {
 	font-size: x-large;
 }
 
@@ -101,7 +103,7 @@ header {
 .right-menu > i {
 	cursor: pointer;
 	padding: 10px;
-    margin: 0;
+	margin: 0;
 }
 
 .right-menu p:hover,
@@ -112,47 +114,47 @@ header {
 }
 
 @media (max-width: 1376px) {
-    .right-menu {
-        gap: 0px;
-    }
+	.right-menu {
+		gap: 0px;
+	}
 }
 
 @media (max-width: 1200px) {
-    .logo img {
-        content: url("../images/logo.png");
-        width: 38px;
-    }
+	.logo img {
+		content: url("../images/logo.png");
+		width: 38px;
+	}
 
-    .logo {
-        max-width: 60px;
-    }
+	.logo {
+		max-width: 60px;
+	}
 
-    .middle-menu {
-        flex: 3;
-        justify-content: flex-end;
-    }
+	.middle-menu {
+		flex: 3;
+		justify-content: flex-end;
+	}
 
-    .right-menu {
-        flex: 2;
-    }
+	.right-menu {
+		flex: 2;
+	}
 }
 
 @media (max-width: 868px) {
-    .middle-menu {
-        justify-content: center;
-    }
+	.middle-menu {
+		justify-content: center;
+	}
 
-    .middle-menu .menu-btns button {
-        font-size: 14px;
-        padding: 0 10px;
-    }
+	.middle-menu .menu-btns button {
+		font-size: 14px;
+		padding: 0 10px;
+	}
 
-    .middle-menu .menu-btns button:last-child {
-        padding: 5px 5px 5px 6px;
-    }
+	.middle-menu .menu-btns button:last-child {
+		padding: 5px 5px 5px 6px;
+	}
 
-    .right-menu {
-        font-size: 14px;
-        text-align: center;
-    }
+	.right-menu {
+		font-size: 14px;
+		text-align: center;
+	}
 }
