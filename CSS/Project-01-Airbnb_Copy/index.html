@@ -66,7 +66,7 @@
 
                 <!-- Filter Chips -->
                 <div class="chips">
-                    <div class="chip">
+                    <div class="chip active">
                         <img src="./images/filter_icons/islands.jpg" alt="Islands">
                         <p>Islands</p>
                     </div>
@@ -575,22 +575,7 @@
         </footer>
     </div>
 
-    <script>
-        // Since 
-        /* html:not([data-scroll='0']) .filters {
-                box-shadow: 0 1px 2px rgb(0 0 0 / 8%), 0 4px 12px rgb(0 0 0 / 5%);
-            }
-        */
-        // is not working.... =>
-
-        window.onscroll = () => {
-            if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
-                document.querySelector(".filters").classList.add("shadow")
-            } else {
-                document.querySelector(".filters").classList.remove("shadow");
-            }
-        }
-    </script>
+    <script src="./scripts.js"></script>
 
 </body>
 
