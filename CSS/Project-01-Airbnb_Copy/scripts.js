@@ -19,4 +19,16 @@
 			chip.classList.add("active");
 		});
 	});
+
+	// Set Favourite
+	const hearts = document.querySelectorAll(".fa-heart");
+	hearts.forEach((heart) => {
+		heart.addEventListener("click", () => {
+			if (heart.classList.contains("favourite")) {
+				heart.classList.remove("favourite");
+			} else {
+				heart.classList.add("favourite");
+			}
+		});
+	});
 })();

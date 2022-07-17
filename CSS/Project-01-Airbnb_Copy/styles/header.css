@@ -158,3 +158,10 @@ header {
 		text-align: center;
 	}
 }
+
+@media (max-width: 700px) {
+	.middle-menu span,
+	.middle-menu button:not(:last-child) {
+		display: none;
+	}
+}

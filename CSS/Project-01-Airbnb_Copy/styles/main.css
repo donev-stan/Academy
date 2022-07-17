@@ -42,6 +42,12 @@ main .container {
 
 .img-box .heart-btn .fa-heart {
 	text-shadow: 0px 2px 20px rgba(0, 0, 0, 1);
+	transition: color 0.5s ease;
+}
+
+.favourite {
+	transition: color 0.5s ease;
+	color: red;
 }
 
 .img-box img {
@@ -56,6 +62,7 @@ main .container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	/* margin-top: 10px; */
 }
 
 .name-and-rating-box .heading,
