@@ -1,8 +1,8 @@
 .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
   height: 100%;
   max-width: 1280px;
   width: 80%;
@@ -10,7 +10,6 @@
 }
 
 header {
-  position: fixed;
   max-width: 1760px;
   width: 100%;
   height: 80px;
@@ -18,10 +17,10 @@ header {
   border-bottom: 1px solid rgb(232, 232, 232);
 }
 header .img-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
   flex: 1;
 }
 header .img-box img {
@@ -29,17 +28,17 @@ header .img-box img {
   height: 34px;
 }
 header .search-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
   flex: 1;
 }
 header .search-box .search {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
   gap: 100px;
   padding: 7px;
   border: 1px solid rgb(232, 232, 232);
@@ -64,17 +63,17 @@ header .search-box .search .fa-magnifying-glass {
   border-radius: 100%;
 }
 header .menu-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
   flex: 1;
 }
 header .menu-box .menu-btn {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
   gap: 5px;
   margin-left: 5px;
   border: 1px solid rgb(232, 232, 232);
@@ -105,6 +104,215 @@ header .menu-box .fa-globe:hover {
   background-color: rgb(246, 246, 246);
 }
 
+@media (max-width: 1100px) {
+  header .search-box,
+header .menu-box {
+    flex: 2;
+  }
+}
+@media (max-width: 900px) {
+  header .img-box {
+    flex: 0;
+    margin-right: 15px;
+  }
+  header .img-box img {
+    content: url("../../img/logo.png");
+    width: 38px;
+    height: auto;
+  }
+  header .search-box .search {
+    gap: 80px;
+  }
+  header .menu-box {
+    flex: 0;
+  }
+  header .menu-box #host-text {
+    display: none;
+  }
+}
+@media (max-width: 567px) {
+  header .container .search-box .search {
+    justify-content: flex-end !important;
+    width: 100%;
+  }
+  header .container .search-box .search #search-text {
+    display: none;
+  }
+}
+@media (max-width: 400px) {
+  header .search-box .search {
+    gap: 20px;
+  }
+}
+footer {
+  width: 100%;
+  background-color: #f7f7f7;
+}
+footer .container {
+  padding: 48px 0;
+}
+footer .hr-div {
+  border-bottom: 1px solid rgb(232, 232, 232);
+}
+footer .location-options .container {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+}
+footer .location-options .container .options {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 120px;
+  margin: 48px 0 24px 0;
+}
+footer .location-options .container .options .option {
+  width: 284px;
+  height: 40px;
+}
+footer .location-options .container .options .option a {
+  text-decoration: none;
+  color: #717171;
+}
+footer .location-options .container .nav-breadcrumb a {
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+}
+footer .location-options .container .nav-breadcrumb a:hover {
+  text-decoration: underline;
+}
+footer .footer-links .container {
+  align-items: flex-start;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+footer .footer-links .container .support,
+footer .footer-links .container .community,
+footer .footer-links .container .hosting,
+footer .footer-links .container .airbnb {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+footer .footer-links .container .support .links,
+footer .footer-links .container .community .links,
+footer .footer-links .container .hosting .links,
+footer .footer-links .container .airbnb .links {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  gap: 20px;
+  font-size: 14px;
+}
+footer .footer-links .container .support .links a,
+footer .footer-links .container .community .links a,
+footer .footer-links .container .hosting .links a,
+footer .footer-links .container .airbnb .links a {
+  text-decoration: none;
+  color: black;
+}
+footer .footer-links .container .support .links a:hover,
+footer .footer-links .container .community .links a:hover,
+footer .footer-links .container .hosting .links a:hover,
+footer .footer-links .container .airbnb .links a:hover {
+  text-decoration: underline;
+}
+footer .footer-menu .container {
+  border-top: 1px solid rgb(232, 232, 232);
+  padding: 24px 0;
+}
+footer .footer-menu .container a {
+  text-decoration: none;
+  color: black;
+}
+footer .footer-menu .container a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+footer .footer-menu .container .left-menu {
+  font-size: 14px;
+}
+footer .footer-menu .container .right-menu {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  gap: 30px;
+}
+footer .footer-menu .container .right-menu .language {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  gap: 10px;
+}
+footer .footer-menu .container .right-menu .language .fa-globe {
+  cursor: pointer;
+}
+footer .footer-menu .container .right-menu .social-media {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  gap: 25px;
+}
+footer .footer-menu .container .right-menu .social-media .fa-facebook-f,
+footer .footer-menu .container .right-menu .social-media .fa-twitter,
+footer .footer-menu .container .right-menu .social-media .fa-instagram-square {
+  font-size: 20px;
+}
+footer .footer-menu .container .right-menu .social-media .fa-facebook-f:hover,
+footer .footer-menu .container .right-menu .social-media .fa-twitter:hover,
+footer .footer-menu .container .right-menu .social-media .fa-instagram-square:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 1250px) {
+  footer .location-options .container .options .option {
+    width: 150px;
+  }
+  footer .footer-links .container .support,
+footer .footer-links .container .community,
+footer .footer-links .container .hosting,
+footer .footer-links .container .airbnb {
+    width: 100%;
+    border-bottom: 1px solid rgb(232, 232, 232);
+    padding-bottom: 20px;
+  }
+  footer .footer-links .container .support .links,
+footer .footer-links .container .community .links,
+footer .footer-links .container .hosting .links,
+footer .footer-links .container .airbnb .links {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    gap: 15px 50px !important;
+  }
+  footer .footer-links .container .airbnb {
+    border: none;
+    padding-bottom: 0;
+  }
+}
+@media (max-width: 1100px) {
+  footer .container {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 20px;
+    text-align: center;
+  }
+}
+@media (max-width: 600px) {
+  footer .footer-links .container .support .links,
+footer .footer-links .container .community .links,
+footer .footer-links .container .hosting .links,
+footer .footer-links .container .airbnb .links {
+    flex-direction: column !important;
+  }
+}
 * {
   margin: 0;
   padding: 0;
