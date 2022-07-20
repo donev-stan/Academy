@@ -1,0 +1,119 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  max-width: 1280px;
+  width: 80%;
+  margin: auto;
+}
+
+header {
+  position: fixed;
+  max-width: 1760px;
+  width: 100%;
+  height: 80px;
+  margin: auto;
+  border-bottom: 1px solid rgb(232, 232, 232);
+}
+header .img-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1;
+}
+header .img-box img {
+  width: 110px;
+  height: 34px;
+}
+header .search-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+header .search-box .search {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding: 7px;
+  border: 1px solid rgb(232, 232, 232);
+  border-radius: 40px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+header .search-box .search:hover {
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+header .search-box .search #search-text {
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: 15px;
+}
+header .search-box .search .fa-magnifying-glass {
+  color: white;
+  background-color: #ff385c;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 100%;
+}
+header .menu-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+}
+header .menu-box .menu-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-left: 5px;
+  border: 1px solid rgb(232, 232, 232);
+  border-radius: 21px;
+  padding: 5px;
+}
+header .menu-box .menu-btn:hover {
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+header .menu-box .menu-btn .fa-circle-user {
+  font-size: 30px;
+  color: rgb(122, 122, 122);
+}
+header .menu-box .menu-btn .fa-bars {
+  font-size: 16px;
+  padding: 0 8px;
+}
+header .menu-box #host-text,
+header .menu-box .fa-globe {
+  border-radius: 22px;
+  padding: 14px;
+}
+header .menu-box #host-text:hover,
+header .menu-box .fa-globe:hover {
+  cursor: pointer;
+  background-color: rgb(246, 246, 246);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  scrollbar-width: none;
+  height: 2000px;
+}
+
+/*# sourceMappingURL=styles.css.map */

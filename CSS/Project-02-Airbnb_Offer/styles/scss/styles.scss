@@ -1,0 +1,14 @@
+@use "./components/container";
+@use "./components/header";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	scrollbar-width: none;
+
+	height: 2000px;
+}
