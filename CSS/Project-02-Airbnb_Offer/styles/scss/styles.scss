@@ -1,5 +1,6 @@
 @use "./components/container";
 @use "./components/header";
+@use "./components/main";
 @use "./components/footer";
 
 * {
@@ -9,7 +10,10 @@
 
 body {
 	font-family: "Montserrat", sans-serif;
-	scrollbar-width: none;
 
 	height: 2000px;
+}
+
+img {
+	width: 100px;
 }
