@@ -29,4 +29,21 @@
 			}
 		}
 	}
+
+	.show-all-offers {
+		margin-top: 40px;
+
+		.show-all-offers-btn {
+			border: 1px solid black;
+			border-radius: 12px;
+			padding: 13px 23px;
+			font-weight: bold;
+			width: fit-content;
+
+			&:hover {
+				cursor: pointer;
+				background-color: $hoverGrayColor;
+			}
+		}
+	}
 }

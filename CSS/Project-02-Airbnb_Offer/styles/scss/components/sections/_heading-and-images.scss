@@ -156,11 +156,21 @@ main {
 	}
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
 	main {
 		.heading-and-images {
 			.container {
 				width: 90%;
+			}
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	main {
+		.heading-and-images {
+			.container {
+				width: 95%;
 				.images-box {
 					.second-img-col {
 						display: none;
