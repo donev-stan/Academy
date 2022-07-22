@@ -28,6 +28,7 @@ header .container .img-box {
 header .container .img-box img {
   width: 110px;
   height: 34px;
+  cursor: pointer;
 }
 header .container .search-box {
   display: flex !important;
@@ -146,23 +147,409 @@ header .container .menu-box {
     gap: 20px;
   }
 }
-main .container .heading-and-images .heading-box {
+main .heading-and-images .container .heading-box {
   display: flex !important;
   flex-direction: row !important;
   justify-content: space-between !important;
-  align-items: center !important;
+  align-items: flex-end !important;
   padding-top: 24px;
 }
-main .container .heading-and-images .heading-box .name-and-info-box .heading {
+main .heading-and-images .container .heading-box .name-and-info-box {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+  gap: 10px;
+}
+main .heading-and-images .container .heading-box .name-and-info-box .heading {
   color: #222222 !important;
 }
-main .container .heading-and-images .images-box {
+main .heading-and-images .container .heading-box .name-and-info-box .info {
+  font-size: 14px;
+}
+main .heading-and-images .container .heading-box .name-and-info-box .info .fa-star {
+  font-size: 15px;
+}
+main .heading-and-images .container .heading-box .name-and-info-box .info a {
+  color: black;
+  font-weight: bold;
+}
+main .heading-and-images .container .heading-box .share-and-save-box {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-end !important;
+  align-items: flex-end !important;
+  gap: 10px;
+}
+main .heading-and-images .container .heading-box .share-and-save-box .share-box,
+main .heading-and-images .container .heading-box .share-and-save-box .save-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px;
+  border-radius: 8px;
+}
+main .heading-and-images .container .heading-box .share-and-save-box .share-box a,
+main .heading-and-images .container .heading-box .share-and-save-box .save-box a {
+  font-size: 14px;
+  color: black;
+}
+main .heading-and-images .container .heading-box .share-and-save-box .share-box:hover,
+main .heading-and-images .container .heading-box .share-and-save-box .save-box:hover {
+  cursor: pointer;
+  background-color: rgb(246, 246, 246);
+}
+main .heading-and-images .container .images-box {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 8px;
   padding-top: 24px;
+  position: relative;
+}
+main .heading-and-images .container .images-box img {
+  width: 100%;
+  cursor: pointer;
+  vertical-align: bottom;
+  object-fit: cover;
+  filter: brightness(100%);
+}
+main .heading-and-images .container .images-box img:hover {
+  color: black;
+  filter: brightness(88%);
+  transition: filter 0.2s ease-in;
+}
+main .heading-and-images .container .images-box .main-img {
+  flex: 2;
+}
+main .heading-and-images .container .images-box .main-img img {
+  height: 560px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+main .heading-and-images .container .images-box .second-img-col,
+main .heading-and-images .container .images-box .third-img-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+main .heading-and-images .container .images-box .second-img-col img,
+main .heading-and-images .container .images-box .third-img-col img {
+  height: 276px;
+}
+main .heading-and-images .container .images-box .third-img-col img:first-child {
+  border-top-right-radius: 10px;
+}
+main .heading-and-images .container .images-box .third-img-col img:last-child {
+  border-bottom-right-radius: 10px;
+}
+main .heading-and-images .container .images-box .all-photos-btn {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 10px;
+  position: absolute;
+  border-radius: 8px;
+  border: 1px solid black;
+  background-color: white;
+  font-size: 14px;
+  padding: 7px 15px;
+  bottom: 30px;
+  right: 30px;
+}
+main .heading-and-images .container .images-box .all-photos-btn:hover {
+  cursor: pointer;
+  background-color: rgb(246, 246, 246);
+}
+
+@media (max-width: 1250px) {
+  main .heading-and-images .container .images-box .third-img-col {
+    display: none;
+  }
+  main .heading-and-images .container .images-box .second-img-col img:first-child {
+    border-top-right-radius: 10px;
+  }
+  main .heading-and-images .container .images-box .second-img-col img:last-child {
+    border-bottom-right-radius: 10px;
+  }
+}
+@media (max-width: 900px) {
+  main .heading-and-images .container {
+    width: 90%;
+  }
+  main .heading-and-images .container .images-box .second-img-col {
+    display: none;
+  }
+  main .heading-and-images .container .images-box .main-img img {
+    border-radius: 10px;
+  }
+}
+@media (max-width: 760px) {
+  main .heading-and-images .container {
+    width: 95%;
+  }
+}
+main .map {
+  margin: 48px 0;
+}
+main .map .container iframe {
+  width: 100%;
+  height: 480px;
+  border: none;
+  margin: 24px 0;
+}
+main .map .container h3 {
+  margin-bottom: 16px;
+}
+main .map .container .show-more {
+  margin-top: 16px;
+  cursor: pointer;
+  width: fit-content;
+}
+main .map .container .show-more a,
+main .map .container .show-more span {
+  font-weight: bold;
+  color: black;
+}
+
+@media (max-width: 900px) {
+  main .map .container {
+    width: 90%;
+  }
+}
+main .host-info {
+  padding: 48px 0;
+}
+main .host-info .container {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+main .host-info .container .host {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+main .host-info .container .host .host-img {
+  position: relative;
+}
+main .host-info .container .host .host-img #hostImg {
+  border-radius: 100%;
+  width: 67px;
+}
+main .host-info .container .host .host-img #medalImg {
+  position: absolute;
+  width: 25px;
+  bottom: 2px;
+  right: -5px;
+}
+main .host-info .container .host .name-and-date {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 10px;
+}
+main .host-info .container .host .name-and-date span {
+  font-size: 14px;
+}
+main .host-info .container .info {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: space-between !important;
+  width: 85%;
+  gap: 50px;
+}
+main .host-info .container .info .info-left {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 25px;
+  max-width: 460px;
+}
+main .host-info .container .info .info-left .medals {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 20px;
+}
+main .host-info .container .info .info-left .medals span {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 10px;
+}
+main .host-info .container .info .info-left .host-comment p {
+  height: 79px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+main .host-info .container .info .info-left .during-your-stay p {
+  height: 95px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+main .host-info .container .info .info-right {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+}
+main .host-info .container .info .info-right .number-info ul {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 16px;
+  list-style: none;
+}
+main .host-info .container .info .info-right .contact-host {
+  margin-top: 32px;
+}
+main .host-info .container .info .info-right .contact-host .contact-host-btn {
+  padding: 13px;
+  border-radius: 8px;
+  border: 1px solid black;
+  background-color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+main .host-info .container .info .info-right .contact-host .contact-host-btn:hover {
+  background-color: rgb(246, 246, 246);
+  cursor: pointer;
+}
+main .host-info .container .info .info-right .warning-info {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 15px;
+  margin-top: 24px;
+  max-width: 460px;
+}
+main .host-info .container .info .info-right .warning-info .fa-airbnb {
+  font-size: 25px;
+  color: #ff385c;
+}
+main .host-info .container .info .info-right .warning-info p {
+  font-size: 14px;
+}
+
+@media (max-width: 1100px) {
+  main .host-info .container .info {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: space-between !important;
+  }
+}
+@media (max-width: 700px) {
+  main .host-info .container .info {
+    width: 100%;
+  }
+}
+@media (max-width: 535px) {
+  main .host-info .container .info .info-left .medals {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: flex-start !important;
+  }
+}
+main .things-to-know {
+  padding: 48px 0;
+}
+main .things-to-know .container {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+}
+main .things-to-know .container .heading {
+  padding-bottom: 24px;
+}
+main .things-to-know .container .content {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+main .things-to-know .container .content .house-rules,
+main .things-to-know .container .content .health-and-safety,
+main .things-to-know .container .content .cancellation-policy {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 10px;
+  flex: 1;
+  min-width: 220px;
+}
+main .things-to-know .container .content .house-rules h3,
+main .things-to-know .container .content .health-and-safety h3,
+main .things-to-know .container .content .cancellation-policy h3 {
+  margin-bottom: 12px;
+}
+main .things-to-know .container .content .house-rules .rule,
+main .things-to-know .container .content .house-rules .safety,
+main .things-to-know .container .content .house-rules .policy,
+main .things-to-know .container .content .health-and-safety .rule,
+main .things-to-know .container .content .health-and-safety .safety,
+main .things-to-know .container .content .health-and-safety .policy,
+main .things-to-know .container .content .cancellation-policy .rule,
+main .things-to-know .container .content .cancellation-policy .safety,
+main .things-to-know .container .content .cancellation-policy .policy {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 12px;
+  font-size: 16px;
+}
+main .things-to-know .container .content .house-rules .rule i,
+main .things-to-know .container .content .house-rules .safety i,
+main .things-to-know .container .content .house-rules .policy i,
+main .things-to-know .container .content .health-and-safety .rule i,
+main .things-to-know .container .content .health-and-safety .safety i,
+main .things-to-know .container .content .health-and-safety .policy i,
+main .things-to-know .container .content .cancellation-policy .rule i,
+main .things-to-know .container .content .cancellation-policy .safety i,
+main .things-to-know .container .content .cancellation-policy .policy i {
+  font-size: 20px;
+}
+main .things-to-know .container .content .house-rules .show-more,
+main .things-to-know .container .content .health-and-safety .show-more,
+main .things-to-know .container .content .cancellation-policy .show-more {
+  font-weight: bold;
+  margin-top: 24px;
+  cursor: pointer;
+}
+main .things-to-know .container .content .house-rules .show-more a,
+main .things-to-know .container .content .house-rules .show-more span,
+main .things-to-know .container .content .health-and-safety .show-more a,
+main .things-to-know .container .content .health-and-safety .show-more span,
+main .things-to-know .container .content .cancellation-policy .show-more a,
+main .things-to-know .container .content .cancellation-policy .show-more span {
+  color: #222222;
 }
 
 footer {
   width: 100%;
   background-color: #f7f7f7;
+  border-top: 1px solid lightgray;
 }
 footer .container {
   padding: 48px 0;
@@ -363,8 +750,8 @@ body {
   height: 2000px;
 }
 
-img {
-  width: 100px;
+.hr-div {
+  border-top: 1px solid rgb(221, 221, 221);
 }
 
 /*# sourceMappingURL=styles.css.map */

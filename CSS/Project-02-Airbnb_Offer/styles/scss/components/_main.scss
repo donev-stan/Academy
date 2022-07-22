@@ -1,31 +1,5 @@
-@use "../abstracts/index" as *;
+@forward "./sections/heading-and-images";
 
-main {
-	.container {
-		.heading-and-images {
-			.heading-box {
-				@include flexContainer(row, space-between, center);
-				padding-top: 24px;
-
-				.name-and-info-box {
-					.heading {
-						color: #222222 !important;
-						// font-weight: 600 !important;
-						// font-size: 24px !important;
-						// line-height: 26px !important;
-					}
-
-					.info {
-					}
-				}
-
-				.share-and-save-box {
-				}
-			}
-
-			.images-box {
-				padding-top: 24px;
-			}
-		}
-	}
-}
+@forward "./sections/map";
+@forward "./sections/host-info";
+@forward "./sections/things-to-know";
