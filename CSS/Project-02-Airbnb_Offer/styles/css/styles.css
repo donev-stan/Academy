@@ -8,7 +8,8 @@
 header {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translate(-50%);
   z-index: 1;
   background-color: white;
   max-width: 1760px;
@@ -309,6 +310,7 @@ main .heading-and-images .container .images-box .all-photos-btn:hover {
 }
 .info-and-hostImg .hostImg {
   position: relative;
+  cursor: pointer;
 }
 .info-and-hostImg .hostImg #hostImg {
   height: 56px;
@@ -484,6 +486,7 @@ main .heading-and-images .container .images-box .all-photos-btn:hover {
   justify-content: center !important;
   align-items: flex-start !important;
   gap: 30px;
+  margin-bottom: 20px;
 }
 .booking .calendars .calendar-left,
 .booking .calendars .calendar-right {
@@ -526,21 +529,21 @@ main .heading-and-images .container .images-box .all-photos-btn:hover {
 .booking .calendars .calendar-right .calendar-date .fa-chevron-right:hover {
   background-color: rgb(246, 246, 246);
 }
-.booking table {
+.booking .calendars table {
   text-align: center;
   font-size: 14px;
   border: none;
   border-collapse: collapse;
 }
-.booking table th,
-.booking table td {
+.booking .calendars table th,
+.booking .calendars table td {
   min-width: 48px;
   height: 48px;
 }
-.booking table td {
+.booking .calendars table td {
   color: gray;
 }
-.booking table .circle, .booking table .circle-hover:hover {
+.booking .calendars table .circle, .booking .calendars table .circle-hover:hover {
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
@@ -550,26 +553,57 @@ main .heading-and-images .container .images-box .all-photos-btn:hover {
   background-color: black;
   color: white;
 }
-.booking table .circle-hover:hover {
+.booking .calendars table .circle-hover:hover {
   background-color: white;
   color: black;
   border: 1px solid black;
 }
-.booking table .strike {
+.booking .calendars table .strike {
   text-decoration: line-through;
 }
-.booking table .stay-period {
+.booking .calendars table .stay-period {
   color: black;
   background-color: rgb(232, 232, 232);
   cursor: pointer;
 }
-.booking table .stay-period:first-child {
+.booking .calendars table .stay-period:first-child {
   border-top-left-radius: 100%;
   border-bottom-left-radius: 100%;
 }
-.booking table .stay-period:nth-child(6) {
+.booking .calendars table .stay-period:nth-child(6) {
   border-top-right-radius: 100%;
   border-bottom-right-radius: 100%;
+}
+.booking .calendar-controls {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+.booking .calendar-controls .keyboard-input {
+  margin-left: 25px;
+}
+.booking .calendar-controls .keyboard-input .fa-keyboard {
+  font-size: 20px;
+  padding: 12px;
+  border-radius: 100%;
+}
+.booking .calendar-controls .keyboard-input .fa-keyboard:hover {
+  cursor: pointer;
+  background-color: rgb(246, 246, 246);
+}
+.booking .calendar-controls .clear-date {
+  margin-right: 25px;
+  padding: 8px;
+  border-radius: 8px;
+}
+.booking .calendar-controls .clear-date a {
+  color: black;
+  font-size: 15px;
+}
+.booking .calendar-controls .clear-date:hover {
+  cursor: pointer;
+  background-color: rgb(246, 246, 246);
 }
 
 @media (max-width: 1450px) {
@@ -615,11 +649,214 @@ main .heading-and-images .container .images-box .all-photos-btn:hover {
     height: 60px;
   }
 }
-main .multiple-main-sections .container {
+.right-content {
+  gap: 24px;
+  height: 1935px;
+  margin: auto;
+  margin-top: 46px;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+}
+.right-content .container-right {
+  width: 80%;
+  position: sticky;
+  top: 100px;
+  max-width: 350px;
+}
+.right-content .container-right .reserve-box {
+  padding: 24px;
+  margin-bottom: 24px;
+  max-width: 480px;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: space-between !important;
+}
+.right-content .container-right .reserve-box .form {
+  border: 1px solid rgb(172, 172, 172);
+  border-radius: 8px;
+  margin-top: 24px;
+  cursor: pointer;
+}
+.right-content .container-right .reserve-box .form .check-in-out {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: space-between !important;
+  height: 56px;
+}
+.right-content .container-right .reserve-box .form .check-in-out .check-out, .right-content .container-right .reserve-box .form .check-in-out .check-in {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  flex: 1;
+  border-bottom: 1px solid rgb(172, 172, 172);
+  padding: 10px;
+}
+.right-content .container-right .reserve-box .form .check-in-out .check-out .heading-span, .right-content .container-right .reserve-box .form .check-in-out .check-in .heading-span {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 10px;
+  padding-bottom: 5px;
+}
+.right-content .container-right .reserve-box .form .check-in-out .check-out .date-span, .right-content .container-right .reserve-box .form .check-in-out .check-in .date-span {
+  color: rgb(99, 99, 99);
+  font-size: 15px;
+}
+.right-content .container-right .reserve-box .form .check-in-out .check-in {
+  border-right: 1px solid rgb(172, 172, 172);
+}
+.right-content .container-right .reserve-box .form .guests {
   display: flex !important;
   flex-direction: row !important;
   justify-content: flex-start !important;
   align-items: center !important;
+  height: 56px;
+  padding: 0 10px;
+}
+.right-content .container-right .reserve-box .form .guests .text {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  flex: 1;
+}
+.right-content .container-right .reserve-box .form .guests .text .heading-span {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 10px;
+  padding-bottom: 5px;
+}
+.right-content .container-right .reserve-box .form .guests .text .option-span {
+  color: rgb(99, 99, 99);
+  font-size: 15px;
+}
+.right-content .container-right .reserve-box .form .guests .more-options {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  flex: 1;
+}
+.right-content .container-right .reserve-box a {
+  color: black;
+}
+.right-content .container-right .reserve-box .price-and-rating {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 5px;
+}
+.right-content .container-right .reserve-box .price-and-rating .price .price-span {
+  font-size: 22px;
+}
+.right-content .container-right .reserve-box .price-and-rating .rating {
+  font-size: 15px;
+}
+.right-content .container-right .reserve-box .price-and-rating .rating a {
+  color: gray;
+}
+.right-content .container-right .reserve-box .reserve-btn {
+  margin-top: 16px;
+  cursor: pointer;
+  background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  padding: 14px 24px;
+  border-radius: 8px;
+}
+.right-content .container-right .reserve-box .reserve-info {
+  margin-top: 15px;
+  text-align: center;
+  color: rgb(34, 34, 34) !important;
+}
+.right-content .container-right .reserve-box .pricing-info {
+  margin-top: 24px;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: space-between !important;
+  gap: 20px;
+}
+.right-content .container-right .reserve-box .pricing-info .info {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+.right-content .container-right .reserve-box .pricing-info .info .price-span {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  min-width: 90px;
+}
+.right-content .container-right .reserve-box .total-price {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  font-weight: bold;
+}
+.right-content .container-right .rare-find {
+  padding: 24px;
+  margin-bottom: 24px;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 12px;
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  gap: 20px;
+}
+.right-content .container-right .rare-find .fa-gem {
+  font-size: 34px;
+  color: #ff385c;
+}
+.right-content .container-right .report {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  gap: 20px;
+  color: gray;
+  margin: auto;
+}
+.right-content .container-right .report a {
+  color: gray;
+}
+
+@media (max-width: 1370px) {
+  .right-content {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-end !important;
+    align-items: flex-start !important;
+  }
+  .right-content .container-right {
+    width: 90%;
+  }
+  .right-content .container-right .reserve-box .price-and-rating {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+  }
+}
+main .multiple-main-sections .container {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
 }
 main .multiple-main-sections .container .left-content {
   width: 60%;
@@ -1261,7 +1498,7 @@ footer .footer-links .container .airbnb .links {
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif !important;
   height: 2000px;
 }
 
@@ -1277,6 +1514,10 @@ body {
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+.wrapper {
+  margin: auto;
 }
 
 /*# sourceMappingURL=styles.css.map */

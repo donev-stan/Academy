@@ -12,6 +12,7 @@
 	.calendars {
 		@include flexContainer(row, center, flex-start);
 		gap: 30px;
+		margin-bottom: 20px;
 
 		.calendar-left,
 		.calendar-right {
@@ -51,63 +52,97 @@
 				}
 			}
 		}
+
+		table {
+			// border: 1px solid black;
+			text-align: center;
+			font-size: 14px;
+			border: none;
+			border-collapse: collapse;
+
+			th,
+			td {
+				min-width: 48px;
+				height: 48px;
+				// margin: -1;
+				// border: 1px solid black;
+			}
+
+			td {
+				color: gray;
+			}
+
+			.circle {
+				@include flexContainer(column, center, center);
+				height: 100%;
+				border-radius: 100px;
+				background-color: black;
+				color: white;
+			}
+
+			.circle-hover {
+				&:hover {
+					@extend .circle;
+					background-color: white;
+					color: black;
+					border: 1px solid black;
+				}
+			}
+
+			.strike {
+				text-decoration: line-through;
+			}
+
+			.stay-period {
+				color: black;
+				background-color: $grayColor;
+				// border-left: 5px solid $grayColor;
+				cursor: pointer;
+			}
+
+			.stay-period:first-child {
+				border-top-left-radius: 100%;
+				border-bottom-left-radius: 100%;
+			}
+
+			.stay-period:nth-child(6) {
+				border-top-right-radius: 100%;
+				border-bottom-right-radius: 100%;
+			}
+		}
 	}
 
-	table {
-		// border: 1px solid black;
-		text-align: center;
-		font-size: 14px;
-		border: none;
-		border-collapse: collapse;
+	.calendar-controls {
+		@include flexContainer(row, space-between, center);
 
-		th,
-		td {
-			min-width: 48px;
-			height: 48px;
-			// margin: -1;
-			// border: 1px solid black;
-		}
+		.keyboard-input {
+			margin-left: 25px;
+			.fa-keyboard {
+				font-size: 20px;
+				padding: 12px;
+				border-radius: 100%;
 
-		td {
-			color: gray;
-		}
-
-		.circle {
-			@include flexContainer(column, center, center);
-			height: 100%;
-			border-radius: 100px;
-			background-color: black;
-			color: white;
-		}
-
-		.circle-hover {
-			&:hover {
-				@extend .circle;
-				background-color: white;
-				color: black;
-				border: 1px solid black;
+				&:hover {
+					cursor: pointer;
+					background-color: $hoverGrayColor;
+				}
 			}
 		}
 
-		.strike {
-			text-decoration: line-through;
-		}
+		.clear-date {
+			margin-right: 25px;
+			padding: 8px;
+			border-radius: 8px;
 
-		.stay-period {
-			color: black;
-			background-color: $grayColor;
-			// border-left: 5px solid $grayColor;
-			cursor: pointer;
-		}
+			a {
+				color: black;
+				font-size: 15px;
+			}
 
-		.stay-period:first-child {
-			border-top-left-radius: 100%;
-			border-bottom-left-radius: 100%;
-		}
-
-		.stay-period:nth-child(6) {
-			border-top-right-radius: 100%;
-			border-bottom-right-radius: 100%;
+			&:hover {
+				cursor: pointer;
+				background-color: $hoverGrayColor;
+			}
 		}
 	}
 }

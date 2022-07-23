@@ -7,11 +7,12 @@
 @forward "./sleep-option";
 @forward "./place-offers";
 @forward "./booking";
+@forward "./reserve-box";
 
 main {
 	.multiple-main-sections {
 		.container {
-			@include flexContainer(row, flex-start, center);
+			@include flexContainer(row, flex-start, flex-start);
 
 			.left-content {
 				width: 60%;
