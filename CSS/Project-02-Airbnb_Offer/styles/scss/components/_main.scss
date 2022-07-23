@@ -5,7 +5,19 @@
 @forward "./sections/host-info";
 @forward "./sections/things-to-know";
 
-@media (max-width: 1150px) {
+main {
+	margin-top: 80px;
+}
+
+@media (max-width: 1250px) {
+	main {
+		.container {
+			width: 90%;
+		}
+	}
+}
+
+@media (max-width: 900px) {
 	main {
 		.container {
 			width: 95%;

@@ -1,9 +1,11 @@
 @use "../abstracts/index" as *;
 
 header {
-	// position: fixed;
-	// top: 0;
-	// left: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background-color: white;
 
 	.container {
 		@include flexContainer(row, space-between, center);

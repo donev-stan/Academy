@@ -76,20 +76,36 @@ main {
 			}
 
 			.review-comments {
-				@include flexContainer(row, flex-start, center);
+				@include flexContainer(row, flex-start, flex-start);
 				gap: 120px;
 
 				.comment {
-					line-height: 24px;
-					overflow: hidden;
-					text-overflow: ellipsis;
-					height: 72px;
-					font-size: 16px;
+					p {
+						// @include flexContainer(column, flex-start, flex-start);
+						line-height: 24px;
+						overflow: hidden;
+						text-overflow: ellipsis;
+						// white-space: nowrap;
+						height: 72px;
+						font-size: 16px;
+					}
+
+					.show-more {
+						margin-top: 8px;
+						cursor: pointer;
+						width: fit-content;
+						font-weight: bold;
+
+						a {
+							color: black;
+						}
+					}
 				}
 
 				.review-comment {
 					margin-bottom: 40px;
 				}
+
 				.name-and-image {
 					@include flexContainer(row, flex-start, center);
 					gap: 20px;
@@ -114,11 +130,9 @@ main {
 					}
 				}
 
-				.left-box {
-					max-width: 460px;
-				}
-
+				.left-box,
 				.right-box {
+					min-width: 460px;
 					max-width: 460px;
 				}
 			}
@@ -135,6 +149,53 @@ main {
 					&:hover {
 						background-color: $hoverGrayColor;
 					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1250px) {
+	main {
+		.reviews {
+			.container {
+				width: 90%;
+			}
+		}
+	}
+}
+
+@media (max-width: 1100px) {
+	main {
+		.reviews {
+			.container {
+				.review-comments {
+					@include flexContainer(column, flex-start, flex-start);
+					gap: 0px;
+
+					.left-box,
+					.right-box {
+						max-width: 100%;
+
+						.comment {
+							p {
+								max-height: 46px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 800px) {
+	main {
+		.reviews {
+			.container {
+				.ratings {
+					@include flexContainer(column, flex-start, flex-start);
+					gap: 15px;
 				}
 			}
 		}

@@ -27,12 +27,27 @@
 
 				.fa-chevron-left {
 					position: absolute;
-					left: 36px;
+					left: 25px;
+					padding: 8px 12px;
+					border-radius: 100%;
+					cursor: pointer;
+
+					&:hover {
+						background-color: $hoverGrayColor;
+					}
 				}
 
 				.fa-chevron-right {
 					position: absolute;
-					right: 36px;
+					right: 25px;
+
+					padding: 8px 12px;
+					border-radius: 100%;
+					cursor: pointer;
+
+					&:hover {
+						background-color: $hoverGrayColor;
+					}
 				}
 			}
 		}
@@ -65,6 +80,15 @@
 			color: white;
 		}
 
+		.circle-hover {
+			&:hover {
+				@extend .circle;
+				background-color: white;
+				color: black;
+				border: 1px solid black;
+			}
+		}
+
 		.strike {
 			text-decoration: line-through;
 		}
@@ -73,6 +97,7 @@
 			color: black;
 			background-color: $grayColor;
 			// border-left: 5px solid $grayColor;
+			cursor: pointer;
 		}
 
 		.stay-period:first-child {
