@@ -88,6 +88,8 @@ main {
 						// white-space: nowrap;
 						height: 72px;
 						font-size: 16px;
+						-webkit-line-clamp: 3;
+						-webkit-box-orient: vertical;
 					}
 
 					.show-more {
@@ -196,6 +198,19 @@ main {
 				.ratings {
 					@include flexContainer(column, flex-start, flex-start);
 					gap: 15px;
+
+					.left-box,
+					.right-box {
+						width: 100%;
+					}
+				}
+
+				.review-comments {
+					.left-box,
+					.right-box {
+						width: 100%;
+						min-width: 0;
+					}
 				}
 			}
 		}

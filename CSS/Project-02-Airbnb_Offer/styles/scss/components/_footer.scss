@@ -9,15 +9,9 @@ footer {
 		padding: 48px 0;
 	}
 
-	.hr-div {
-		border-bottom: 1px solid $grayColor;
-	}
-
 	.location-options {
 		.container {
 			@include flexContainer(column, center, flex-start);
-
-			text-align: start;
 
 			.options {
 				@include flexContainer(row, flex-start, center);
@@ -55,7 +49,6 @@ footer {
 		.container {
 			@include flexContainer(row, flex-start, flex-start);
 
-			align-items: flex-start;
 			gap: 25px;
 			flex-wrap: wrap;
 
@@ -63,8 +56,7 @@ footer {
 			.community,
 			.hosting,
 			.airbnb {
-				display: flex;
-				flex-direction: column;
+				@include flexContainer(column, flex-start, flex-start);
 				gap: 20px;
 				width: 262px;
 

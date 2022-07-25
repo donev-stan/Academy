@@ -150,30 +150,17 @@ main {
 	}
 }
 
-// @media (max-width: 700px) {
-// 	main {
-// 		.host-info {
-// 			.container {
-// 				.info {
-// 					width: 100%;
-// 				}
-// 			}
-// 		}
-// 	}
-// }
-
-// @media (max-width: 535px) {
-// 	main {
-// 		.host-info {
-// 			.container {
-// 				.info {
-// 					.info-left {
-// 						.medals {
-// 							@include flexContainer(column, center, flex-start);
-// 						}
-// 					}
-// 				}
-// 			}
-// 		}
-// 	}
-// }
+@media (max-width: 500px) {
+	main {
+		.host-info {
+			.container {
+				.info {
+					.info-left,
+					.info-right {
+						min-width: 0;
+					}
+				}
+			}
+		}
+	}
+}
