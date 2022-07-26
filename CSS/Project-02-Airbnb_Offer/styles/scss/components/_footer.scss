@@ -33,7 +33,7 @@ footer {
 
 			.nav-breadcrumb {
 				a {
-					font-size: 14px;
+					font-size: 0.9rem;
 					text-decoration: none;
 					color: black;
 
@@ -63,10 +63,11 @@ footer {
 				.links {
 					@include flexContainer(column, flex-start, flex-start);
 					gap: 20px;
-					font-size: 14px;
+					font-size: 0.9rem;
+
 					a {
 						text-decoration: none;
-						color: black;
+						color: $linkColor;
 
 						&:hover {
 							text-decoration: underline;
@@ -94,7 +95,7 @@ footer {
 			}
 
 			.left-menu {
-				font-size: 14px;
+				font-size: 0.9rem;
 			}
 
 			.right-menu {

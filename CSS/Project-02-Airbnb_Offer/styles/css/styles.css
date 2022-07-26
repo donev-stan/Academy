@@ -59,14 +59,14 @@ header .container .search-box .search:hover {
   transition: box-shadow 0.2s ease;
 }
 header .container .search-box .search #search-text {
-  font-size: 14px;
+  font-size: 0.9rem;
   font-weight: 600;
   margin-left: 15px;
 }
 header .container .search-box .search .fa-magnifying-glass {
   color: white;
   background-color: #ff385c !important;
-  font-size: 14px;
+  font-size: 0.9rem;
   padding: 8px;
   border-radius: 100%;
 }
@@ -98,7 +98,7 @@ header .container .menu-box .menu-btn .fa-circle-user {
   color: rgb(122, 122, 122);
 }
 header .container .menu-box .menu-btn .fa-bars {
-  font-size: 16px;
+  font-size: 1rem;
   padding: 0 8px;
 }
 header .container .menu-box #host-text,
@@ -170,13 +170,13 @@ main .heading-and-images .container .heading-box .name-and-info-box .heading {
   color: #222222 !important;
 }
 main .heading-and-images .container .heading-box .name-and-info-box .info {
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 main .heading-and-images .container .heading-box .name-and-info-box .info .fa-star {
-  font-size: 15px;
+  font-size: 1rem;
 }
 main .heading-and-images .container .heading-box .name-and-info-box .info a {
-  color: black;
+  color: rgb(34, 34, 34) !important;
   font-weight: bold;
 }
 main .heading-and-images .container .heading-box .share-and-save-box {
@@ -196,8 +196,8 @@ main .heading-and-images .container .heading-box .share-and-save-box .save-box {
 }
 main .heading-and-images .container .heading-box .share-and-save-box .share-box a,
 main .heading-and-images .container .heading-box .share-and-save-box .save-box a {
-  font-size: 14px;
-  color: black;
+  font-size: 0.9rem;
+  color: rgb(34, 34, 34) !important;
 }
 main .heading-and-images .container .heading-box .share-and-save-box .share-box:hover,
 main .heading-and-images .container .heading-box .share-and-save-box .save-box:hover {
@@ -260,7 +260,7 @@ main .heading-and-images .container .images-box .all-photos-btn {
   border-radius: 8px;
   border: 1px solid black;
   background-color: white;
-  font-size: 14px;
+  font-size: 0.9rem;
   padding: 7px 15px;
   bottom: 30px;
   right: 30px;
@@ -370,7 +370,7 @@ main .heading-and-images .container .images-box .all-photos-btn:hover {
   font-weight: bold;
 }
 .offer-info .offering .text-info .text {
-  font-size: 14px;
+  font-size: 0.9rem;
   color: rgb(113, 113, 113) !important;
 }
 
@@ -433,7 +433,7 @@ main .heading-and-images .container .images-box .all-photos-btn:hover {
   margin-bottom: 10px;
 }
 .sleep-option .options .option .text {
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 
 .place-offers {
@@ -549,7 +549,6 @@ main .heading-and-images .container .images-box .all-photos-btn:hover {
 }
 .booking .calendars table {
   text-align: center;
-  font-size: 14px;
   border: none;
   border-collapse: collapse;
 }
@@ -602,7 +601,7 @@ main .heading-and-images .container .images-box .all-photos-btn:hover {
   margin-left: 25px;
 }
 .booking .calendar-controls .keyboard-input .fa-keyboard {
-  font-size: 20px;
+  font-size: 1.3rem;
   padding: 12px;
   border-radius: 100%;
 }
@@ -616,8 +615,8 @@ main .heading-and-images .container .images-box .all-photos-btn:hover {
   border-radius: 8px;
 }
 .booking .calendar-controls .clear-date a {
-  color: black;
-  font-size: 15px;
+  color: rgb(34, 34, 34) !important;
+  font-size: 0.9rem;
 }
 .booking .calendar-controls .clear-date:hover {
   cursor: pointer;
@@ -792,12 +791,12 @@ main .heading-and-images .container .images-box .all-photos-btn:hover {
 .right-content .container-right .reserve-box .form .check-in-out .check-out .heading-span, .right-content .container-right .reserve-box .form .check-in-out .check-in .heading-span {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 10px;
+  font-size: 0.6rem;
   padding-bottom: 5px;
 }
 .right-content .container-right .reserve-box .form .check-in-out .check-out .date-span, .right-content .container-right .reserve-box .form .check-in-out .check-in .date-span {
   color: rgb(99, 99, 99);
-  font-size: 15px;
+  font-size: 0.9rem;
 }
 .right-content .container-right .reserve-box .form .check-in-out .check-in {
   border-right: 1px solid rgb(172, 172, 172);
@@ -820,12 +819,12 @@ main .heading-and-images .container .images-box .all-photos-btn:hover {
 .right-content .container-right .reserve-box .form .guests .text .heading-span {
   text-transform: uppercase;
   font-weight: bold;
-  font-size: 10px;
+  font-size: 0.5rem;
   padding-bottom: 5px;
 }
 .right-content .container-right .reserve-box .form .guests .text .option-span {
   color: rgb(99, 99, 99);
-  font-size: 15px;
+  font-size: 0.9rem;
 }
 .right-content .container-right .reserve-box .form .guests .more-options {
   display: flex !important;
@@ -845,10 +844,10 @@ main .heading-and-images .container .images-box .all-photos-btn:hover {
   gap: 5px;
 }
 .right-content .container-right .reserve-box .price-and-rating .price .price-span {
-  font-size: 22px;
+  font-size: 1.3rem;
 }
 .right-content .container-right .reserve-box .price-and-rating .rating {
-  font-size: 15px;
+  font-size: 0.9rem;
 }
 .right-content .container-right .reserve-box .price-and-rating .rating a {
   color: gray;
@@ -858,7 +857,7 @@ main .heading-and-images .container .images-box .all-photos-btn:hover {
   cursor: pointer;
   background: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%) !important;
   color: white;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: bold;
   text-align: center;
   padding: 14px 24px;
@@ -994,7 +993,7 @@ main .reviews .container .overall-rating {
   margin-bottom: 32px;
 }
 main .reviews .container .overall-rating span {
-  font-size: 22px;
+  font-size: 1.4rem;
 }
 main .reviews .container .ratings {
   display: flex !important;
@@ -1024,7 +1023,7 @@ main .reviews .container .ratings .right-box .rating-box {
 }
 main .reviews .container .ratings .left-box .rating-box .title,
 main .reviews .container .ratings .right-box .rating-box .title {
-  font-size: 16px;
+  font-size: 1rem;
 }
 main .reviews .container .ratings .left-box .rating-box .rating,
 main .reviews .container .ratings .right-box .rating-box .rating {
@@ -1064,7 +1063,7 @@ main .reviews .container .ratings .right-box .rating-box .rating .rating-stars {
 }
 main .reviews .container .ratings .left-box .rating-box .rating .rating-stars span,
 main .reviews .container .ratings .right-box .rating-box .rating .rating-stars span {
-  font-size: 14px;
+  font-size: 0.8rem;
 }
 main .reviews .container .review-comments {
   display: flex !important;
@@ -1078,7 +1077,7 @@ main .reviews .container .review-comments .comment p {
   overflow: hidden;
   text-overflow: ellipsis;
   height: 72px;
-  font-size: 16px;
+  font-size: 1rem;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
@@ -1111,8 +1110,9 @@ main .reviews .container .review-comments .name-and-image .img-box img {
   object-fit: cover;
 }
 main .reviews .container .review-comments .name-and-image .name-and-date p {
+  margin-top: 5px;
   color: #717171;
-  font-size: 14px;
+  font-size: 0.8rem;
 }
 main .reviews .container .review-comments .left-box,
 main .reviews .container .review-comments .right-box {
@@ -1250,7 +1250,7 @@ main .host-info .container .host .name-and-date {
   gap: 10px;
 }
 main .host-info .container .host .name-and-date span {
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 main .host-info .container .info {
   display: flex !important;
@@ -1316,7 +1316,7 @@ main .host-info .container .info .info-right .contact-host .contact-host-btn {
   border-radius: 8px;
   border: 1px solid black;
   background-color: white;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
 }
 main .host-info .container .info .info-right .contact-host .contact-host-btn:hover {
@@ -1337,7 +1337,7 @@ main .host-info .container .info .info-right .warning-info .fa-airbnb {
   color: #ff385c !important;
 }
 main .host-info .container .info .info-right .warning-info p {
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 1050px) {
@@ -1404,7 +1404,7 @@ main .things-to-know .container .content .cancellation-policy .policy {
   justify-content: flex-start !important;
   align-items: center !important;
   gap: 12px;
-  font-size: 16px;
+  font-size: 1rem;
 }
 main .things-to-know .container .content .house-rules .rule i,
 main .things-to-know .container .content .house-rules .safety i,
@@ -1479,7 +1479,7 @@ footer .location-options .container .options .option a {
   color: #717171;
 }
 footer .location-options .container .nav-breadcrumb a {
-  font-size: 14px;
+  font-size: 0.9rem;
   text-decoration: none;
   color: black;
 }
@@ -1514,14 +1514,14 @@ footer .footer-links .container .airbnb .links {
   justify-content: flex-start !important;
   align-items: flex-start !important;
   gap: 20px;
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 footer .footer-links .container .support .links a,
 footer .footer-links .container .community .links a,
 footer .footer-links .container .hosting .links a,
 footer .footer-links .container .airbnb .links a {
   text-decoration: none;
-  color: black;
+  color: rgb(34, 34, 34) !important;
 }
 footer .footer-links .container .support .links a:hover,
 footer .footer-links .container .community .links a:hover,
@@ -1546,7 +1546,7 @@ footer .footer-menu .container a:hover {
   text-decoration: underline;
 }
 footer .footer-menu .container .left-menu {
-  font-size: 14px;
+  font-size: 0.9rem;
 }
 footer .footer-menu .container .right-menu {
   display: flex !important;
@@ -1714,6 +1714,12 @@ body {
   -moz-user-select: none; /* Old versions of Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
   user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 14px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
