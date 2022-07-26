@@ -126,6 +126,58 @@ footer {
 			}
 		}
 	}
+
+	.mobile-footer {
+		display: none;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 80px;
+		background-color: white;
+
+		border-top: 1px solid $grayColor;
+
+		.container {
+			@include flexContainer(row, center, center);
+			padding: 0 !important;
+			width: 95%;
+
+			.price,
+			.reserve {
+				flex: 1;
+			}
+
+			.price {
+				@include flexContainer(column, center, flex-start);
+
+				a {
+					color: rgb(34, 34, 34);
+				}
+			}
+
+			.reserve {
+				flex: 1;
+
+				@include flexContainer(row, flex-end, center);
+
+				.reserve-btn {
+					border-radius: 8px;
+					color: white;
+					font-weight: bold;
+					text-align: center;
+					border: 1px solid green;
+					padding: 14px 24px;
+					background: linear-gradient(
+						to right,
+						rgb(230, 30, 77) 0%,
+						rgb(227, 28, 95) 50%,
+						rgb(215, 4, 102) 100%
+					) !important;
+				}
+			}
+		}
+	}
 }
 
 @media (max-width: 1350px) {
@@ -161,8 +213,8 @@ footer {
 				}
 
 				.airbnb {
-					border: none;
-					padding-bottom: 0;
+					border: none !important;
+					padding-bottom: 0 !important;
 				}
 			}
 		}
@@ -214,6 +266,17 @@ footer {
 					}
 				}
 			}
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	footer {
+		.footer-menu {
+			margin-bottom: 80px;
+		}
+		.mobile-footer {
+			display: block;
 		}
 	}
 }
