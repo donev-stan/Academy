@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./styles/css/styles.css">
 
     <!-- Scripts -->
+    <script src="./scripts/index.js"></script>
     <script src="./scripts/showTaskContent.js"></script>
     <script src="./scripts/attachToDOM.js"></script>
     <script src="./scripts/clearHistory.js"></script>
@@ -34,7 +35,7 @@
     <div class="wrapper">
 
         <div class="menu">
-            <button onclick="showTaskContent(event, '.task-01')" class="show-task-btn active">Task 1</button>
+            <button onclick="showTaskContent(event, '.task-01')" class="show-task-btn">Task 1</button>
             <button onclick="showTaskContent(event, '.task-02')" class="show-task-btn">Task 2</button>
             <button onclick="showTaskContent(event, '.task-03')" class="show-task-btn">Task 3</button>
             <button onclick="showTaskContent(event, '.task-04')" class="show-task-btn">Task 4</button>
@@ -50,7 +51,7 @@
         <div class="content">
 
             <!-- Task 1 -->
-            <div class="task task-01 taskActive">
+            <div class="task task-01">
                 <div class="heading">
                     <h2>From Celsius to Fahrenheit</h2>
                     <div class="btns">

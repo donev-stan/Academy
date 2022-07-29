@@ -11,7 +11,7 @@ const fromCelsiusToFahrenheit = () => {
 
 	const degreesInFahrenheit = degreesInCelsius * 1.8 + 32;
 
-	let resultText = `${degreesInCelsius}C = ${degreesInFahrenheit}F`;
+	let resultText = `${degreesInCelsius} &#x2103; = ${degreesInFahrenheit} &#8457;`;
 
 	attachToDom(".task-01-result", ".task-01-history", resultText);
 };

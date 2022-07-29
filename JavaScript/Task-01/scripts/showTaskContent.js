@@ -8,6 +8,8 @@ const showTaskContent = (event, taskNumber) => {
 	clearActiveTask();
 
 	setActiveTask(taskNumber);
+
+	loadHistory(taskNumber);
 };
 
 const setActiveBtn = (btn) => {
@@ -30,4 +32,19 @@ const clearActiveTask = () => {
 
 const setActiveTask = (taskNumber) => {
 	document.querySelector(taskNumber).classList.add("taskActive");
+};
+
+const loadHistory = (taskNumber) => {
+	if (historyResults) {
+		const historyTask =
+			historyResults[`${taskNumber.substring(1)}-history`];
+
+		if (historyTask.length !== 0) {
+			document.querySelector(`${taskNumber}-history`).innerHTML = "";
+
+			historyTask.map((historyItem) => {
+				attachToHistoryDiv(`${taskNumber}-history`, historyItem);
+			});
+		}
+	}
 };
