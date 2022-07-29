@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
+.menu {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  background-color: rgb(246, 246, 246);
+}
+.menu button {
+  padding: 20px 50px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: transparent;
+}
+.menu button:hover:not(.active) {
+  background-color: lightgray;
+}
+.menu .active {
+  background-color: seagreen;
+  color: white;
+}
+
+@media (max-width: 992px) {
+  .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.content {
+  display: flex;
+  width: 100%;
+}
+.content .task {
+  display: none;
+  width: 100%;
+}
+.content .taskActive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content .taskActive .heading {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  width: 90%;
+}
+.content .taskActive .heading button {
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  color: white;
+}
+.content .taskActive .heading .clearHistory-btn {
+  background-color: orange;
+}
+.content .taskActive .heading .runTask-btn {
+  background-color: seagreen;
+}
+.content .taskActive .task-content {
+  display: flex;
+  flex: 10;
+  width: 100%;
+  margin: 20px 0;
+}
+.content .taskActive .task-content .result-container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  flex: 2;
+  align-items: center;
+  height: 100%;
+}
+.content .taskActive .task-content .result-container .result {
+  font-size: 1.5rem;
+}
+.content .taskActive .task-content .history {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+  border-left: 1px solid lightgray;
+}
+.content .taskActive .task-content .history h3 {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 992px) {
+  .task-content {
+    flex-direction: column;
+    gap: 55px;
+  }
+  .task-content .history {
+    border: none !important;
+  }
+  .heading {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+html {
+  font-family: "Roboto Slab", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  width: 80%;
+  max-width: 1780px;
+  margin: 30px auto;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+}
+
+@media (max-width: 1600px) {
+  .wrapper {
+    width: 85%;
+  }
+}
+@media (max-width: 1400px) {
+  .wrapper {
+    width: 90%;
+  }
+}
+@media (max-width: 1200px) {
+  .wrapper {
+    width: 95%;
+  }
+}
+@media (max-width: 992px) {
+  .wrapper {
+    width: 95%;
+    flex-direction: column;
+  }
+}
+@media (max-width: 576px) {
+  .wrapper {
+    margin: 0;
+    width: 100%;
+    box-shadow: none;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

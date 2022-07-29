@@ -1,0 +1,91 @@
+.content {
+	display: flex;
+
+	.task {
+		display: none;
+		width: 100%;
+	}
+
+	.taskActive {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.heading {
+			display: flex;
+			justify-content: space-between;
+			margin: 20px 0;
+			width: 90%;
+
+			button {
+				cursor: pointer;
+				padding: 10px 15px;
+				font-size: 1rem;
+				border: none;
+				border-radius: 8px;
+				color: white;
+			}
+
+			.clearHistory-btn {
+				background-color: orange;
+			}
+
+			.runTask-btn {
+				background-color: seagreen;
+			}
+		}
+
+		.task-content {
+			display: flex;
+			flex: 10;
+			width: 100%;
+			margin: 20px 0;
+
+			.result-container {
+				display: flex;
+				flex-direction: column;
+				gap: 50px;
+				flex: 2;
+				align-items: center;
+				height: 100%;
+
+				.result {
+					font-size: 1.5rem;
+				}
+			}
+
+			.history {
+				display: flex;
+				flex-direction: column;
+				flex: 1;
+				gap: 10px;
+				align-items: center;
+				text-align: center;
+				border-left: 1px solid lightgray;
+
+				h3 {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+
+	width: 100%;
+}
+
+@media (max-width: 992px) {
+	.task-content {
+		flex-direction: column;
+		gap: 55px;
+
+		.history {
+			border: none !important;
+		}
+	}
+
+	.heading {
+		flex-direction: column;
+		gap: 20px;
+		text-align: center;
+	}
+}

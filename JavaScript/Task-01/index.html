@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./styles/css/styles.css">
+
+    <!-- Scripts -->
+    <script src="./scripts/attachToDOM.js" defer></script>
+    <script src="./scripts/showTaskContent.js" defer></script>
+    <script src="./scripts/task-01.js" defer></script>
+    <script src="./scripts/task-02.js" defer></script>
+    <script src="./scripts/task-03.js" defer></script>
+    <script src="./scripts/task-04.js" defer></script>
+    <script src="./scripts/task-05.js" defer></script>
+    <script src="./scripts/task-06.js" defer></script>
+    <script src="./scripts/task-07.js" defer></script>
+    <script src="./scripts/task-08.js" defer></script>
+    <script src="./scripts/task-09.js" defer></script>
+    <script src="./scripts/task-10.js" defer></script>
+    <script src="./scripts/task-11.js" defer></script>
+
+    <title>Lecture 01 - Exercises</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+
+        <div class="menu">
+            <button onclick="showTaskContent(event, '.task-01')" class="show-task-btn active">Task
+                1</button>
+            <button onclick="showTaskContent(event, '.task-02')" class="show-task-btn">Task 2</button>
+            <button onclick="showTaskContent(event, '.task-03')" class="show-task-btn">Task 3</button>
+            <button onclick="showTaskContent(event, '.task-04')" class="show-task-btn">Task 4</button>
+            <button onclick="showTaskContent(event, '.task-05')" class="show-task-btn">Task 5</button>
+            <button onclick="showTaskContent(event, '.task-06')" class="show-task-btn">Task 6</button>
+            <button onclick="showTaskContent(event, '.task-07')" class="show-task-btn">Task 7</button>
+            <button onclick="showTaskContent(event, '.task-08')" class="show-task-btn">Task 8</button>
+            <button onclick="showTaskContent(event, '.task-09')" class="show-task-btn">Task 9</button>
+            <button onclick="showTaskContent(event, '.task-10')" class="show-task-btn">Task 10</button>
+            <button onclick="showTaskContent(event, '.task-11')" class="show-task-btn">Task 11</button>
+        </div>
+
+        <div class="content">
+
+            <!-- Task 1 -->
+            <div class="task task-01 taskActive">
+                <div class="heading">
+                    <h2>From Celsius to Fahrenheit</h2>
+                    <div class="btns">
+                        <button class="clearHistory-btn" onclick="clearHistory()">Clear History</button>
+                        <button class="runTask-btn" onclick="fromCelsiusToFahrenheit()">Run</button>
+                    </div>
+                </div>
+
+                <div class="task-content">
+                    <div class="result-container">
+                        <h3>Result:</h3>
+                        <div class="result task-01-result">
+                        </div>
+                    </div>
+
+                    <div class="history task-01-history">
+                        <h3>History</h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Task 2 -->
+            <div class="task task-02">
+                <div class="heading">
+                    <h2>The arithmetic mean of two numbers, rounded up</h2>
+                    <div class="btns">
+                        <button class="clearHistory-btn" onclick="clearHistory()">Clear History</button>
+                        <button class="runTask-btn" onclick="arithmeticMean()">Run</button>
+                    </div>
+                </div>
+
+                <div class="task-content">
+                    <div class="result-container">
+                        <h3>Result:</h3>
+                        <div class="result task-02-result">
+                        </div>
+                    </div>
+
+                    <div class="history task-02-history">
+                        <h3>History</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 3 -->
+            <div class="task task-03">
+                <div class="heading">
+                    <h2>True / False / Null</h2>
+                    <div class="btns">
+                        <button class="clearHistory-btn" onclick="clearHistory()">Clear History</button>
+                        <button class="runTask-btn" onclick="whatsThatNumber()">Run</button>
+                    </div>
+                </div>
+
+                <div class="task-content">
+                    <div class="result-container">
+                        <h3>Result:</h3>
+                        <div class="result task-03-result">
+                        </div>
+                    </div>
+
+                    <div class="history task-03-history">
+                        <h3>History</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 4 -->
+            <div class="task task-04">
+                <div class="heading">
+                    <h2>Closer to one hundred</h2>
+                    <div class="btns">
+                        <button class="clearHistory-btn" onclick="clearHistory()">Clear History</button>
+                        <button class="runTask-btn" onclick="closerToOneHundred()">Run</button>
+                    </div>
+                </div>
+
+                <div class="task-content">
+                    <div class="result-container">
+                        <h3>Result:</h3>
+                        <div class="result task-04-result">
+                        </div>
+                    </div>
+
+                    <div class="history task-04-history">
+                        <h3>History</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 5 -->
+            <div class="task task-05">
+                <div class="heading">
+                    <h2>Grade student based on score</h2>
+                    <div class="btns">
+                        <button class="clearHistory-btn" onclick="clearHistory()">Clear History</button>
+                        <button class="runTask-btn" onclick="gradeStudent()">Run</button>
+                    </div>
+                </div>
+
+                <div class="task-content">
+                    <div class="result-container">
+                        <h3>Result:</h3>
+                        <div class="result task-05-result">
+                        </div>
+                    </div>
+
+                    <div class="history task-05-history">
+                        <h3>History</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 6 -->
+            <div class="task task-06">
+                <div class="heading">
+                    <h2>Minutes to Seconds Conversion</h2>
+                    <div class="btns">
+                        <button class="clearHistory-btn" onclick="clearHistory()">Clear History</button>
+                        <button class="runTask-btn" onclick="minutesToSeconds()">Run</button>
+                    </div>
+                </div>
+
+                <div class="task-content">
+                    <div class="result-container">
+                        <h3>Result:</h3>
+                        <div class="result task-06-result">
+                        </div>
+                    </div>
+
+                    <div class="history task-06-history">
+                        <h3>History</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 7 -->
+            <div class="task task-07">
+                <div class="heading">
+                    <h2>The sum of the prevous 2 numbers</h2>
+                    <div class="btns">
+                        <button class="clearHistory-btn" onclick="clearHistory()">Clear History</button>
+                        <button class="runTask-btn" onclick="sumOfThePreviousTwoNumbers()">Run</button>
+                    </div>
+                </div>
+
+                <div class="task-content">
+                    <div class="result-container">
+                        <h3>Result:</h3>
+                        <div class="result task-07-result">
+                        </div>
+                    </div>
+
+                    <div class="history task-07-history">
+                        <h3>History</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 8 -->
+            <div class="task task-08">
+                <div class="heading">
+                    <h2>Years to Days Conversion</h2>
+                    <div class="btns">
+                        <button class="clearHistory-btn" onclick="clearHistory()">Clear History</button>
+                        <button class="runTask-btn" onclick="yearsToDays()">Run</button>
+                    </div>
+                </div>
+
+                <div class="task-content">
+                    <div class="result-container">
+                        <h3>Result:</h3>
+                        <div class="result task-08-result">
+                        </div>
+                    </div>
+
+                    <div class="history task-08-history">
+                        <h3>History</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 9 -->
+            <div class="task task-09">
+                <div class="heading">
+                    <h2>Calculate basketball points</h2>
+                    <div class="btns">
+                        <button class="clearHistory-btn" onclick="clearHistory()">Clear History</button>
+                        <button class="runTask-btn" onclick="calculateBasketballPoints()">Run</button>
+                    </div>
+                </div>
+
+                <div class="task-content">
+                    <div class="result-container">
+                        <h3>Result:</h3>
+                        <div class="result task-09-result">
+                        </div>
+                    </div>
+
+                    <div class="history task-09-history">
+                        <h3>History</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 10 -->
+            <div class="task task-10">
+                <div class="heading">
+                    <h2>Calculate Animal Legs</h2>
+                    <div class="btns">
+                        <button class="clearHistory-btn" onclick="clearHistory()">Clear History</button>
+                        <button class="runTask-btn" onclick="calculateAnimalLegs()">Run</button>
+                    </div>
+                </div>
+
+                <div class="task-content">
+                    <div class="result-container">
+                        <h3>Result:</h3>
+                        <div class="result task-10-result">
+                        </div>
+                    </div>
+
+                    <div class="history task-10-history">
+                        <h3>History</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Task 11 -->
+            <div class="task task-11">
+                <div class="heading">
+                    <h2>Sum of 0 to a number</h2>
+                    <div class="btns">
+                        <button class="clearHistory-btn" onclick="clearHistory()">Clear History</button>
+                        <button class="runTask-btn" onclick="sumOfZeroToNumber()">Run</button>
+                    </div>
+                </div>
+
+                <div class="task-content">
+                    <div class="result-container">
+                        <h3>Result:</h3>
+                        <div class="result task-11-result">
+                        </div>
+                    </div>
+
+                    <div class="history task-11-history">
+                        <h3>History</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
