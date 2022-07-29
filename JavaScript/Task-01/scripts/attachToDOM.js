@@ -14,6 +14,11 @@ const attachToDom = (taskResultDiv, taskHistoryDiv, text) => {
 	localStorage.setItem("history-results", JSON.stringify(historyResults));
 };
 
+/**
+ *
+ * @param {string} taskResultDiv - The className of the result div
+ * @param {string} text - The result text to be appended
+ */
 const attachToResultDiv = (taskResultDiv, text) => {
 	// Append to result div
 	const resultDiv = document.querySelector(taskResultDiv);

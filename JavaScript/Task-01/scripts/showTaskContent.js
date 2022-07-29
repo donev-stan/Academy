@@ -1,14 +1,8 @@
 const showTaskContent = (event, taskNumber) => {
-	const btn = event.target;
-
-	setActiveBtn(btn);
-
-	clearPreviousResults(taskNumber);
-
+	setActiveBtn(event.target);
 	clearActiveTask();
-
 	setActiveTask(taskNumber);
-
+	clearPreviousResults(taskNumber);
 	loadHistory(taskNumber);
 };
 
@@ -20,10 +14,6 @@ const setActiveBtn = (btn) => {
 	btn.classList.add("active");
 };
 
-const clearPreviousResults = (taskNumber) => {
-	document.querySelector(`${taskNumber}-result`).innerHTML = "";
-};
-
 const clearActiveTask = () => {
 	document
 		.querySelectorAll(".task")
@@ -32,6 +22,10 @@ const clearActiveTask = () => {
 
 const setActiveTask = (taskNumber) => {
 	document.querySelector(taskNumber).classList.add("taskActive");
+};
+
+const clearPreviousResults = (taskNumber) => {
+	document.querySelector(`${taskNumber}-result`).innerHTML = "";
 };
 
 const loadHistory = (taskNumber) => {
