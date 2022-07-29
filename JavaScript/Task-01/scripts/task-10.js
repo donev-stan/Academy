@@ -27,7 +27,7 @@ const calculateAnimalLegs = () => {
 
 	const result = calculateLegs(numberOfChickens, numberOfPigs, numberOfCows);
 
-	let resultText = `Legs = ${result}`;
+	let resultText = `Chickens: ${numberOfChickens} <br /> Pigs: ${numberOfPigs} <br /> Cows: ${numberOfCows} <br /> Sum Legs = ${result}`;
 
 	attachToDom(".task-10-result", ".task-10-history", resultText);
 };

@@ -21,7 +21,7 @@ const sumOfZeroToNumber = () => {
 		}`
 	);
 
-	let resultText = `Result: ${result}`;
+	let resultText = `Number: ${number} <br /> Sum: ${result}`;
 
 	attachToDom(".task-11-result", ".task-11-history", resultText);
 };

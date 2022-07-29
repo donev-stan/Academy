@@ -19,7 +19,7 @@ const calculateBasketballPoints = () => {
 
 	const result = calculatePoints(twoPointers, threePointers);
 
-	let resultText = `Two pointers: ${twoPointers} \r\n Three pointers: ${threePointers} \n Result Points: ${result}`;
+	let resultText = `Two pointers: ${twoPointers} <br /> Three pointers: ${threePointers} <br /> Result Points: ${result}`;
 
 	attachToDom(".task-09-result", ".task-09-history", resultText);
 };
