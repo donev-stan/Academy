@@ -54,7 +54,7 @@
 				}
 			}
 
-			.history {
+			.history-container {
 				display: flex;
 				flex-direction: column;
 				flex: 1;
@@ -64,6 +64,10 @@
 				border-left: 1px solid lightgray;
 
 				h3 {
+					margin-bottom: 10px;
+				}
+
+				.history-item {
 					margin-bottom: 10px;
 				}
 			}
@@ -78,7 +82,7 @@
 		flex-direction: column;
 		gap: 55px;
 
-		.history {
+		.history-container {
 			border: none !important;
 		}
 	}
