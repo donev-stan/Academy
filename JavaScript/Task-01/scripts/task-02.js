@@ -19,7 +19,7 @@ const arithmeticMean = () => {
 
 	const result = (number1 + number2) / 2;
 
-	let resultText = `(${number1} + ${number2}) / 2 = ${Math.round(result)}`;
+	let resultText = `(${number1} + ${number2}) / 2 = ${Math.ceil(result)}`;
 
 	attachToDom(".task-02-result", ".task-02-history", resultText);
 };
