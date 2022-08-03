@@ -6,9 +6,13 @@ const findBombReturnDuck = () => {
 			"Enter your string",
 			"Lorem ipsum dolor sit amet, consebombctetur adip"
 		);
-	} while (string.trim().length === 0);
+	} while (string?.trim().length === 0);
 
-	if (string.includes("bomb")) {
+	if (!string) return;
+
+	let resultText;
+
+	if (string.toLowerCase().includes("bomb")) {
 		const indexOfBomb = string.indexOf("bomb");
 
 		const stringWithoutBomb = `${string.substring(
@@ -16,10 +20,12 @@ const findBombReturnDuck = () => {
 			indexOfBomb
 		)}${string.substring(indexOfBomb + 4)}`;
 
-		console.log(`Duck!!!`);
-
-		console.log(`Bomb defused! \n ${stringWithoutBomb}`);
+		resultText = `Duck!!! <br/> Found a bomb in position ${indexOfBomb}. <br/> Bomb defused: ${stringWithoutBomb}`;
 	} else {
-		console.log("No bomb, relax.");
+		resultText = `No bomb, relax.`;
 	}
+
+	document.querySelector(
+		".task-08-result"
+	).innerHTML = `Input: ${string} <br/> ${resultText}`;
 };

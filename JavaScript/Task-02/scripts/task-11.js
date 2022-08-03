@@ -16,5 +16,7 @@ const wordBreakout = () => {
 		}
 	}
 
-	console.log(wantedWord.join(""));
+	document.querySelector(
+		".task-11-result"
+	).innerHTML = `Input: ${text} <br/> Found word: ${wantedWord.join("")}`;
 };

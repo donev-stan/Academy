@@ -3,9 +3,17 @@ const checkForJava = () => {
 
 	do {
 		text = prompt("Please enter text", "JavaScript is awesome!");
-	} while (text.trim().length === 0);
+	} while (text?.trim().length === 0);
 
 	const first4letters = text.substring(0, 4).toLocaleLowerCase();
 
-	first4letters === "java" ? console.log(true) : console.log(false);
+	let isJavaEncountered;
+
+	first4letters === "java"
+		? (isJavaEncountered = true)
+		: (isJavaEncountered = false);
+
+	document.querySelector(
+		".task-06-result"
+	).innerHTML = `Original: ${text} <br/> Result: ${isJavaEncountered}`;
 };

@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
+nav .container {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  background-color: rgb(246, 246, 246);
+}
+nav .container button {
+  padding: 20px 50px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: transparent;
+}
+nav .container button:hover:not(.active) {
+  background-color: lightgray;
+}
+nav .container .active {
+  background-color: seagreen;
+  color: white;
+}
+
+@media (max-width: 992px) {
+  nav .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+main {
+  width: 100%;
+}
+main .container {
+  display: flex;
+}
+main .container .task {
+  display: none;
+  width: 100%;
+}
+main .container .taskActive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .container .taskActive .heading {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  width: 90%;
+}
+main .container .taskActive .heading .runTask-btn {
+  background-color: seagreen;
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+main .container .taskActive .task-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+  margin: 20px 0;
+}
+main .container .taskActive .task-content .input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+main .container .taskActive .task-content .input-container input {
+  height: 25px;
+  width: 400px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid gray;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1), 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+main .container .taskActive .task-content .input-container .error-input {
+  border: 2px solid red;
+}
+main .container .taskActive .task-content .input-container .error-message {
+  color: red;
+  font-size: 1rem;
+}
+main .container .taskActive .task-content .result-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+main .container .taskActive .task-content .result-container .result {
+  font-size: 1.2rem;
+  line-height: 2;
+  word-wrap: break-word;
+  width: 80%;
+  text-align: center;
+}
+
+@media (max-width: 992px) {
+  .task-content {
+    flex-direction: column;
+    gap: 55px;
+  }
+  .heading {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
+html {
+  font-family: "Roboto Slab", serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  width: 80%;
+  max-width: 1780px;
+  margin: 30px auto;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+}
+
+@media (max-width: 1600px) {
+  .wrapper {
+    width: 85%;
+  }
+}
+@media (max-width: 1400px) {
+  .wrapper {
+    width: 90%;
+  }
+}
+@media (max-width: 1200px) {
+  .wrapper {
+    width: 95%;
+  }
+}
+@media (max-width: 992px) {
+  .wrapper {
+    width: 95%;
+    flex-direction: column;
+    margin: 15px auto;
+  }
+}
+@media (max-width: 576px) {
+  .wrapper {
+    margin: 0;
+    width: 100%;
+    box-shadow: none;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -11,7 +11,11 @@ const getCarPrice = () => {
 		ageOfCar = Number(prompt("Vehicle age", 2));
 	} while (isNaN(ageOfCar) || ageOfCar < 0);
 
-	console.log(calculateCarPrice(originalPrice, ageOfCar));
+	let priceNow = calculateCarPrice(originalPrice, ageOfCar);
+
+	document.querySelector(
+		".task-10-result"
+	).innerHTML = `Original price: ${originalPrice}lv <br/> Age: ${ageOfCar} <br/> Price now: ${priceNow}lv`;
 };
 
 const calculateCarPrice = (originalPrice, ageOfCar) => {

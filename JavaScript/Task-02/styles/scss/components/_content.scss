@@ -1,0 +1,108 @@
+main {
+	width: 100%;
+
+	.container {
+		display: flex;
+
+		.task {
+			display: none;
+			width: 100%;
+		}
+
+		.taskActive {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			.heading {
+				display: flex;
+				justify-content: space-between;
+				margin: 20px 0;
+				width: 90%;
+
+				.runTask-btn {
+					background-color: seagreen;
+					cursor: pointer;
+					padding: 10px 15px;
+					font-size: 1rem;
+					border: none;
+					border-radius: 8px;
+					color: white;
+
+					box-shadow: 0 1px 2px rgb(0 0 0 / 10%),
+						0 4px 12px rgb(0 0 0 / 10%);
+				}
+			}
+
+			.task-content {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				gap: 50px;
+				width: 100%;
+				margin: 20px 0;
+
+				.input-container {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-direction: column;
+					gap: 10px;
+					width: 100%;
+
+					input {
+						height: 25px;
+						width: 400px;
+						padding: 5px 10px;
+						border-radius: 8px;
+						border: 1px solid gray;
+
+						box-shadow: 0 1px 2px rgb(0 0 0 / 10%),
+							0 4px 12px rgb(0 0 0 / 10%);
+					}
+
+					.error-input {
+						border: 2px solid red;
+					}
+
+					.error-message {
+						color: red;
+						font-size: 1rem;
+					}
+				}
+
+				.result-container {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					gap: 20px;
+					flex-direction: column;
+					height: 100%;
+					width: 100%;
+
+					.result {
+						font-size: 1.2rem;
+						line-height: 2;
+						word-wrap: break-word;
+						width: 80%;
+						text-align: center;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	.task-content {
+		flex-direction: column;
+		gap: 55px;
+	}
+
+	.heading {
+		flex-direction: column;
+		gap: 20px;
+		text-align: center;
+	}
+}

@@ -2,36 +2,38 @@ const randomNumBetweenNums = () => {
 	let x, y, guess;
 
 	do {
-		x = Number(prompt("Please enter X", 0));
+		x = prompt("Please enter X", 0);
+	} while (isNaN(x) || x.trim() === "");
 
-		console.log(x);
-		console.log(isNaN(x));
-	} while (isNaN(x));
-
-	if (!x && x !== 0) return;
+	if (!x) return;
 
 	do {
-		y = Number(prompt("Please enter Y", 0));
-	} while (isNaN(y));
+		y = prompt("Please enter Y", 0);
+	} while (isNaN(y) || y.trim() === "");
 
-	if (!y && y !== 0) return;
+	if (!y) return;
 
 	do {
-		guess = Number(prompt(`Guess the number between ${x} and ${y}`, 0));
-	} while (isNaN(guess));
+		guess = prompt(`Guess the number between ${x} and ${y}`, 0);
+	} while (isNaN(guess) || guess.trim() === "");
 
-	if (!guess && guess !== 0) return;
+	if (!guess) return;
+
+	x = Number(x);
+	y = Number(y);
+	guess = Number(guess);
 
 	const generatedNum = generateRandomNumber(x, y);
 
-	console.log(`Generated: ${generatedNum}`);
-	console.log(`Guessed: ${guess}`);
+	document.querySelector(
+		".task-02-result"
+	).innerHTML = `X: ${x} <br/> Y: ${y} <br/> Generated: ${generatedNum} <br/> Your Guess: ${guess}`;
 
-	generatedNum === guess ? alert("Good Work!") : alert("Try Again!");
+	setTimeout(() => {
+		generatedNum === guess ? alert("Good Work!") : alert("Try Again!");
+	}, 800);
 };
 
 const generateRandomNumber = (min, max) => {
 	return Math.round(Math.random() * (max - min) + min);
 };
-
-// Check is the input is an empty string

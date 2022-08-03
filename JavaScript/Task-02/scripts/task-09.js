@@ -2,10 +2,14 @@ const prepareBolognese = () => {
 	let pplCount;
 
 	do {
-		pplCount = Number(prompt("How many people "));
-	} while (isNaN(pplCount) || pplCount <= 0);
+		pplCount = prompt("How many people ");
 
-	console.log(pplCount);
+		console.log(isNaN(pplCount));
+	} while (isNaN(pplCount) || pplCount?.trim().length === 0);
+
+	pplCount = Number(pplCount);
+
+	if (!pplCount) return;
 
 	let totalTime = 0;
 
@@ -21,5 +25,7 @@ const prepareBolognese = () => {
 
 	if (totalTime < 30) totalTime += 30 - totalTime;
 
-	console.log(totalTime);
+	document.querySelector(
+		".task-09-result"
+	).innerHTML = `Number of people: ${pplCount} <br/> Pasta Packages Needed: ${pastaPackageCount} <br/> Water Liters Needed: ${waterLitersNeeded} <br/> Time for water to boil: ${boilWaterTime} min <br/> Time for Pasta to boil: ${pastaBoilTime} min <br/> Total time: ${totalTime} minutes`;
 };

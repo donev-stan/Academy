@@ -1,0 +1,38 @@
+nav {
+	.container {
+		display: flex;
+		flex-direction: column;
+
+		min-width: 300px;
+
+		background-color: rgb(246, 246, 246);
+
+		button {
+			padding: 20px 50px;
+			border: none;
+			cursor: pointer;
+			font-weight: bold;
+
+			background-color: transparent;
+
+			&:hover:not(.active) {
+				background-color: lightgray;
+			}
+		}
+
+		.active {
+			background-color: seagreen;
+			color: white;
+		}
+	}
+}
+
+@media (max-width: 992px) {
+	nav {
+		.container {
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+	}
+}
