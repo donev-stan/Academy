@@ -2,7 +2,7 @@ const progressDays = (array) => {
 	let progressDays = 0;
 
 	array.reduce((previousValue, currentValue) => {
-		currentValue > previousValue ? progressDays++ : null;
+		if (currentValue > previousValue) progressDays++;
 		return currentValue;
 	});
 

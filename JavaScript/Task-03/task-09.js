@@ -1,21 +1,30 @@
+// const isFactorChain = (array) => {
+// 	let isFactorChain = true;
+
+// 	for (let i = 0; i < array.length - 1; i++) {
+// 		if (typeof array[i] !== "number") {
+// 			isFactorChain = false;
+// 			break;
+// 		}
+
+// 		if (array[i + 1] % array[i] !== 0) {
+// 			isFactorChain = false;
+// 			break;
+// 		}
+// 	}
+
+// 	return isFactorChain;
+// };
+
 const isFactorChain = (array) => {
-	let isFactorChain = true;
+	// return array.every((element, index, array) => {
+	// 	if (index !== 0) if (element % array[index - 1] !== 0) return false;
+	// 	return true;
+	// });
 
-	for (let i = 0; i < array.length; i++) {
-		if (typeof array[i] !== "number") {
-			isFactorChain = false;
-			break;
-		}
-
-		if (i !== 0) {
-			if (array[i] % array[i - 1] !== 0) {
-				isFactorChain = false;
-				break;
-			}
-		}
-	}
-
-	return isFactorChain;
+	return array.every((element, index, array) =>
+		index !== 0 && element % array[index - 1] !== 0 ? false : true
+	);
 };
 
 console.log(`isFactorChain([4, 6, 12, 36]) = ${isFactorChain([4, 6, 12, 36])}`); // false
