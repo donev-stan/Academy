@@ -9,6 +9,7 @@ const sortArray = (array, sortType) => {
 			break;
 
 		default:
+			// Do nothing
 			break;
 	}
 
