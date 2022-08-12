@@ -5,7 +5,7 @@ const totalVolumeOfBoxes = (...arrays) => {
 	// 	totalVolume += arrays[i].reduce((a, b) => a * b);
 	// }
 
-	arrays.map((array) => (totalVolume += array.reduce((a, b) => a * b)));
+	arrays.forEach((array) => (totalVolume += array.reduce((a, b) => a * b)));
 
 	console.log(totalVolume);
 };
