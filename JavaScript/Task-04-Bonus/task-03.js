@@ -1,5 +1,3 @@
-// Done
-
 const solve = (instructionString) => {
 	const position = {
 		E: 0,

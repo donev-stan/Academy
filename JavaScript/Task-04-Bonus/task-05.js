@@ -1,5 +1,3 @@
-// Done
-
 const findPerimeter = (circleOrSquare, radiusOrSide) => {
 	return (
 		(circleOrSquare === "s" && 4 * radiusOrSide) ||

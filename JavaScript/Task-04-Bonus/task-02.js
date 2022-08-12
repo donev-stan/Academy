@@ -1,5 +1,3 @@
-// Done
-
 const map = {
 	a: "-a-",
 	e: "-e-",
