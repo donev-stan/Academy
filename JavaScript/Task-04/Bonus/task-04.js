@@ -10,6 +10,6 @@ function calculateRoutes(towns, size = towns.length) {
 	});
 }
 
-const result = calculateRoutes(["A", "B", "C"]);
+const result = calculateRoutes(["A", "B", "C"]).map((array) => array.join(">"));
 
-result.forEach((array) => console.log(array));
+console.log(result);

@@ -1,6 +1,3 @@
-// Напишете функция, която получава array от обекти (drinks), като всеки обекти има 2 ключа - name и price.
-// Функцията трябва да сортира array-a по price ascending и да върне новия array.
-
 const solve = (arrayOfObjects) =>
 	arrayOfObjects.sort((a, b) => a.price - b.price);
 

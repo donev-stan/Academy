@@ -18,9 +18,18 @@ const wines = [
 ];
 
 const solve = (arrayOfObjects) => {
-	arrayOfObjects.sort((a, b) => b.price - a.price);
+	const winesCount = arrayOfObjects.length;
 
-	return arrayOfObjects[1].name;
+	switch (winesCount) {
+		case 0:
+			return null;
+
+		case 1:
+			return arrayOfObjects[0].name;
+
+		default:
+			return arrayOfObjects.sort((a, b) => b.price - a.price)[1].name;
+	}
 };
 
 const result = solve(wines);

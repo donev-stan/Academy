@@ -10,11 +10,10 @@ const solve = (amount) => {
 			if (stotinki[i] <= amount) {
 				amount -= stotinki[i];
 
-				if (resultObject.hasOwnProperty(`${stotinki[i]}st`)) {
-					resultObject[`${stotinki[i]}st`] += 1;
-				} else {
-					resultObject[`${stotinki[i]}st`] = 1;
-				}
+				if (!resultObject.hasOwnProperty(`${stotinki[i]}st`))
+					resultObject[`${stotinki[i]}st`] = 0;
+
+				resultObject[`${stotinki[i]}st`] += 1;
 
 				break;
 			}
@@ -26,6 +25,7 @@ const solve = (amount) => {
 
 const result_one = solve(45);
 const result_two = solve(17);
+const result_three = solve(49);
 
 for (const key in result_one) {
 	console.log(`${key}: ${result_one[key]}`);
@@ -33,4 +33,8 @@ for (const key in result_one) {
 
 for (const key in result_two) {
 	console.log(`${key}: ${result_two[key]}`);
+}
+
+for (const key in result_three) {
+	console.log(`${key}: ${result_three[key]}`);
 }

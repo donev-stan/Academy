@@ -4,11 +4,16 @@ const solve = (string) => {
 	for (let i = 0; i < string.length; i++) {
 		const letter = string[i];
 
-		if (resultObject.hasOwnProperty(letter)) {
-			resultObject[letter] = [...resultObject[letter], i];
-		} else {
-			resultObject[letter] = [i];
-		}
+		// Not sure which one is better
+		// if (resultObject.hasOwnProperty(letter)) {
+		// 	resultObject[letter] = [...resultObject[letter], i];
+		// } else {
+		// 	resultObject[letter] = [i];
+		// }
+
+		if (!resultObject.hasOwnProperty(letter)) resultObject[letter] = [];
+
+		resultObject[letter] = [...resultObject[letter], i];
 	}
 
 	return resultObject;
