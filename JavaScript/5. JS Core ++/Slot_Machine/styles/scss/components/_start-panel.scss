@@ -1,0 +1,25 @@
+.start-panel {
+	form {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		font-size: larger;
+		width: 100%;
+		margin-top: 20px;
+
+		.form-item {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+
+			width: 60%;
+			max-width: 500px;
+
+			margin: 0 auto;
+
+			input {
+				height: 30px;
+			}
+		}
+	}
+}

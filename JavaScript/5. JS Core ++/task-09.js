@@ -45,6 +45,19 @@ const solve = ([cardsOnTable, money, players]) => {
 
 	console.log(tableCardsCount);
 
+	players.forEach((player) => {
+		console.log(player);
+
+		const hand = player.hand;
+
+		if (
+			hand[0] ===
+			Object.keys(tableCardsCount).find((key) => key === hand[0])
+		) {
+			console.log(hand[0], player.name);
+		}
+	});
+
 	// console.log(
 	// 	Object.fromEntries(
 	// 		Object.entries(cardCounts).filter(([key, value]) => value > 1)
