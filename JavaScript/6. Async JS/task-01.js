@@ -1,5 +1,5 @@
 const solve = (cards) => {
-	const allproperties = {
+	const allProperties = {
 		colors: [],
 		numbers: [],
 		shades: [],
@@ -7,30 +7,23 @@ const solve = (cards) => {
 	};
 
 	cards.forEach((card) => {
-		const { color, number, shade, shape } = card;
-
-		allproperties.colors.push(color);
-		allproperties.numbers.push(number);
-		allproperties.shades.push(shade);
-		allproperties.shapes.push(shape);
+		allProperties.colors.push(card.color);
+		allProperties.numbers.push(card.number);
+		allProperties.shades.push(card.shade);
+		allProperties.shapes.push(card.shape);
 	});
 
-	const sameDeck = Object.values(allproperties).every(
-		(groupedCardsProperties) => {
-			const unique = groupedCardsProperties.every(
-				(property) =>
-					groupedCardsProperties.indexOf(property) ===
-					groupedCardsProperties.lastIndexOf(property)
-			);
-			const equal = groupedCardsProperties.every(
-				(property) => property === groupedCardsProperties[0]
-			);
+	const sameDeck = Object.values(allProperties).every((stack) => {
+		const unique = stack.every(
+			(property) =>
+				stack.indexOf(property) === stack.lastIndexOf(property)
+		);
+		const equal = stack.every((property) => property === stack[0]);
 
-			return unique || equal;
-		}
-	);
+		return unique || equal;
+	});
 
-	console.log(sameDeck);
+	console.log(cards, "=>", sameDeck);
 };
 
 solve([
