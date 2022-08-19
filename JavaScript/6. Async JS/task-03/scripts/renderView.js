@@ -46,7 +46,7 @@ const renderView = async (data) => {
 	elements.feels_like().innerText = `${String(feels_like).slice(0, 2)} ℃`;
 	elements.min_temp().innerText = `${String(temp_min).slice(0, 2)} ℃`;
 	elements.max_temp().innerText = `${String(temp_max).slice(0, 2)} ℃`;
-	elements.humidity().innerText = humidity;
+	elements.humidity().innerText = `${humidity}%`;
 
 	elements.weather_img().src = chooseWeatherImage(weather_text);
 	elements.weather_text().innerText = weather_text;
