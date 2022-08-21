@@ -33,6 +33,11 @@ const toggleEndGameModal = (toggle) => {
 	mainElements.endGame_modal().style.display = toggle;
 };
 
+const toggleAllInBtn = () => {
+	playPanelElements.all_in_btn().disabled =
+		!playPanelElements.all_in_btn().disabled;
+};
+
 export {
 	updateRenderTotalMoney,
 	toggleError,
@@ -42,4 +47,5 @@ export {
 	displayWinnings,
 	toggleEndGameModal,
 	toggleExitBtn,
+	toggleAllInBtn,
 };

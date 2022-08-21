@@ -9,6 +9,7 @@ import {
 	displayWinnings,
 	toggleEndGameModal,
 	toggleExitBtn,
+	toggleAllInBtn,
 } from "./renderVisuals.js";
 
 const spinMachine = () => {
@@ -21,6 +22,7 @@ const spinMachine = () => {
 	clearSlots();
 	toggleSpinBtn();
 	toggleExitBtn();
+	toggleAllInBtn();
 	playWinningsLoader();
 
 	const spin = [];
@@ -70,6 +72,7 @@ const spinMachine = () => {
 				displayWinnings(winnings);
 				toggleSpinBtn();
 				toggleExitBtn();
+				toggleAllInBtn();
 
 				if (globalStats.total_money === 0) {
 					toggleEndGameModal("flex");
