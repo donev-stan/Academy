@@ -1,3 +1,50 @@
+const cardPower = {
+	A: 14,
+	K: 13,
+	Q: 12,
+	J: 11,
+};
+
+const winType = (length, card) => {
+	switch (card) {
+		case "A":
+			card = "Aces";
+			break;
+
+		case "K":
+			card = "Kings";
+			break;
+
+		case "Q":
+			card = "Queens";
+			break;
+
+		case "J":
+			card = "Valeta";
+			break;
+
+		default:
+			break;
+	}
+
+	switch (length) {
+		case 2:
+			return `Combination Pair of ${card}`;
+
+		case 3:
+			return `Combination Three of a kind with ${card}`;
+
+		case 4:
+			return `Combination Four of a kind with ${card}`;
+
+		case 5:
+			return `Combination Full House with ${card}`;
+
+		default:
+			return `Nothing`;
+	}
+};
+
 const solve = ([cardsOnTable, money, players]) => {
 	validate_input: {
 		if (cardsOnTable.length > 5) return "Extra cards on the table!";
@@ -35,41 +82,48 @@ const solve = ([cardsOnTable, money, players]) => {
 		}
 	}
 
-	const tableCardsCount = {};
+	check_winner: {
+		const playersCards = {};
 
-	for (const card of cardsOnTable) {
-		tableCardsCount[card] = tableCardsCount[card]
-			? tableCardsCount[card] + 1
-			: 1;
+		players.forEach((player) => {
+			playersCards[player.name] = [];
+
+			player.hand.forEach((cardInHand) => {
+				if (cardsOnTable.includes(cardInHand)) {
+					playersCards[player.name].push(cardInHand);
+				}
+			});
+
+			if (playersCards[player.name].length === 0) {
+				return delete playersCards[player.name];
+			}
+
+			playersCards[player.name] = {
+				name: player.name,
+				cards: [
+					...playersCards[player.name],
+					...cardsOnTable.filter((card) =>
+						playersCards[player.name].includes(card)
+					),
+				],
+			};
+
+			const cardsLength = playersCards[player.name].cards.length;
+			const sampleCard = playersCards[player.name].cards[0];
+
+			playersCards[player.name] = {
+				...playersCards[player.name],
+				winType: winType(cardsLength, sampleCard),
+				power: cardPower[sampleCard] * cardsLength,
+			};
+		});
+
+		const sortedWinners = Object.values(playersCards).sort(
+			(a, b) => b.power - a.power
+		);
+
+		return `Winner ${sortedWinners[0].name}, ${sortedWinners[0].winType}, in pot: ${money}`;
 	}
-
-	console.log(tableCardsCount);
-
-	players.forEach((player) => {
-		console.log(player);
-
-		const hand = player.hand;
-
-		if (
-			hand[0] ===
-			Object.keys(tableCardsCount).find((key) => key === hand[0])
-		) {
-			console.log(hand[0], player.name);
-		}
-	});
-
-	// console.log(
-	// 	Object.fromEntries(
-	// 		Object.entries(cardCounts).filter(([key, value]) => value > 1)
-	// 	)
-	// );
-
-	// console.log(players);
-
-	// check pair - player has 2 equal cards in hand
-	// check three of a kind - player got a card in his hands that is repeated two times on the table
-	// check four of a kind - player got a card in his hands that is repeated three times on the table
-	// check full house - player got a card in his hands that is repeated three times on the table
 };
 
 console.log(
