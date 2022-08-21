@@ -11,7 +11,7 @@ import spinMachine from "./spinMachine.js";
 
 import globalStats from "./globalVars.js";
 
-import { updateRenderTotalMoney } from "./renderVisuals.js";
+import { updateRenderTotalMoney, toggleEndGameModal } from "./renderVisuals.js";
 
 (() => {
 	buttons.startBtn().addEventListener("click", () => startGame());
@@ -33,7 +33,7 @@ import { updateRenderTotalMoney } from "./renderVisuals.js";
 
 	endGameModalElements.exit_game_btn().addEventListener("click", () => {
 		switchPanels("exit");
-		mainElements.endGame_modal().style.display = "none";
+		toggleEndGameModal("none");
 	});
 
 	endGameModalElements.enter_again_btn().addEventListener("click", () => {
@@ -48,7 +48,7 @@ import { updateRenderTotalMoney } from "./renderVisuals.js";
 
 		updateRenderTotalMoney(globalStats.total_money);
 
-		mainElements.endGame_modal().style.display = "none";
+		toggleEndGameModal("none");
 	});
 })();
 
