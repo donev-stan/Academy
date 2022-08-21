@@ -4,7 +4,7 @@
   gap: 30px;
   font-size: 1.3rem;
   width: 100%;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 .start-panel .container form .form-item {
   display: flex;
@@ -66,6 +66,9 @@
 .play-panel .container .top-bar .exit-btn-box button:hover {
   opacity: 1;
 }
+.play-panel .container .top-bar .exit-btn-box button:disabled {
+  opacity: 0.3;
+}
 .play-panel .container .top-bar .money-box {
   display: flex;
   justify-content: flex-end;
@@ -112,17 +115,27 @@
   height: 50px;
   font-size: 1.3rem;
 }
-.play-panel .container .game-interaction #spin-money {
+.play-panel .container .game-interaction #spin-money-input {
   height: 30px;
   padding: 0 5px 0 5px;
   width: 100px;
   font-size: 1rem;
   text-align: center;
 }
+.play-panel .container .game-interaction #all-in-btn {
+  cursor: pointer;
+  padding: 8px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  opacity: 0.9;
+}
+.play-panel .container .game-interaction #all-in-btn:hover {
+  opacity: 1;
+}
 .play-panel .container .game-interaction #spin-btn {
   padding: 8px 15px;
   font-size: 1.1rem;
-  margin-top: -1px;
   cursor: pointer;
   border: none;
   border-radius: 8px;
@@ -139,43 +152,14 @@
 .play-panel .container .game-interaction #spin-btn:disabled {
   opacity: 0.3;
 }
-
-@keyframes bounce {
-  0% {
-    animation-timing-function: ease-in;
-    opacity: 0;
-    transform: translateY(-60px);
-  }
-  38% {
-    animation-timing-function: ease-out;
-    opacity: 1;
-    transform: translateY(0);
-  }
-  55% {
-    animation-timing-function: ease-in;
-    transform: translateY(-25px);
-  }
-  72% {
-    animation-timing-function: ease-out;
-    transform: translateY(0);
-  }
-  81% {
-    animation-timing-function: ease-in;
-    transform: translateY(-18px);
-  }
-  90% {
-    animation-timing-function: ease-out;
-    transform: translateY(0);
-  }
-  95% {
-    animation-timing-function: ease-in;
-    transform: translateY(-8px);
-  }
-  100% {
-    animation-timing-function: ease-out;
-    transform: translateY(0);
-  }
+.play-panel .container .game-errors {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: red;
 }
+
 @keyframes spin {
   0% {
     opacity: 0;
@@ -218,10 +202,95 @@
     transform: translateX(1px) rotate(0deg);
   }
 }
+.modal-exit,
+.modal-endGame {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-exit .modal-content,
+.modal-endGame .modal-content {
+  position: relative;
+  background-color: #fefefe;
+  height: fit-content;
+  margin: 150px auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 60%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  text-align: center;
+  max-width: 1000px;
+}
+.modal-exit .modal-content .modal-main,
+.modal-endGame .modal-content .modal-main {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.modal-exit .modal-content .modal-main span,
+.modal-endGame .modal-content .modal-main span {
+  font-weight: bold;
+}
+.modal-exit .modal-content .modal-main #total-money-modal,
+.modal-endGame .modal-content .modal-main #total-money-modal {
+  height: 30px;
+  padding: 0 5px 0 5px;
+  width: 100px;
+  font-size: 1rem;
+  text-align: center;
+}
+.modal-exit .modal-content .modal-options,
+.modal-endGame .modal-content .modal-options {
+  display: flex;
+  width: 100%;
+}
+.modal-exit .modal-content .modal-options .return-box,
+.modal-exit .modal-content .modal-options .exit-box,
+.modal-endGame .modal-content .modal-options .return-box,
+.modal-endGame .modal-content .modal-options .exit-box {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+.modal-exit .modal-content .modal-options .return-box button,
+.modal-exit .modal-content .modal-options .exit-box button,
+.modal-endGame .modal-content .modal-options .return-box button,
+.modal-endGame .modal-content .modal-options .exit-box button {
+  padding: 10px 15px;
+  cursor: pointer;
+  border: none;
+  color: white;
+  text-shadow: 0px 0px 5px black;
+}
+.modal-exit .modal-content .modal-options .return-box button,
+.modal-endGame .modal-content .modal-options .return-box button {
+  background-color: orange;
+}
+.modal-exit .modal-content .modal-options .exit-box button,
+.modal-endGame .modal-content .modal-options .exit-box button {
+  background-color: tomato;
+}
+
+body {
+  background-color: rgb(217, 243, 243);
+}
+
 #wrapper {
   box-shadow: 0px 0px 15px 5px #b6aaaa;
   max-width: 1200px;
-  margin: 10px auto;
+  margin: 50px auto;
+  background-color: white;
 }
 
 .container {

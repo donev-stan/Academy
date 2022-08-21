@@ -1,30 +1,33 @@
 import globalStats from "./globalVars.js";
-import { playPanelElements, buttons } from "./elements.js";
+import { playPanelElements } from "./elements.js";
+import {
+	updateRenderTotalMoney,
+	toggleError,
+	playWinningsLoader,
+	toggleSpinBtn,
+	clearSlots,
+	displayWinnings,
+	toggleEndGameModal,
+	toggleExitBtn,
+} from "./renderVisuals.js";
 
-const spinMachine = (spin_money, total_money) => {
-	if (total_money) globalStats.total_money = total_money;
-	if (spin_money) {
-		globalStats.spin_money = spin_money;
-		playPanelElements.input_spin_money().value = spin_money;
-	}
+const spinMachine = () => {
+	const { status } = updateGlobalStats();
+	if (!status) return;
 
-	globalStats.spin_money = playPanelElements.input_spin_money().value;
-	globalStats.total_money -= globalStats.spin_money;
-	updateTotalMoney(globalStats.total_money);
+	toggleError(null);
+	updateRenderTotalMoney(globalStats.total_money);
 
 	clearSlots();
 	toggleSpinBtn();
+	toggleExitBtn();
 	playWinningsLoader();
 
 	const spin = [];
 	let winnings = 0;
 
 	// Randomize Spin
-	randomize_spin: {
-		for (let i = 0; i < 5; i++) spin[i] = generateRandomNumber();
-		console.log("Spin:");
-		console.log(spin);
-	}
+	for (let i = 0; i < 5; i++) spin[i] = generateRandomNumber();
 
 	// Calculate Winnings
 	calculate_winnings: {
@@ -44,10 +47,6 @@ const spinMachine = (spin_money, total_money) => {
 		}
 
 		globalStats.total_money += winnings;
-
-		console.log(`Bet: ${globalStats.spin_money}`);
-		console.log(`Winnings: ${winnings}`);
-		console.log(`Total money: ${globalStats.total_money}`);
 	}
 
 	// Render Results
@@ -67,29 +66,33 @@ const spinMachine = (spin_money, total_money) => {
 
 		const displayStats = () => {
 			setTimeout(() => {
-				updateTotalMoney(globalStats.total_money);
-				playPanelElements.spin_result().textContent = `Winnings: ${winnings}$`;
+				updateRenderTotalMoney(globalStats.total_money);
+				displayWinnings(winnings);
 				toggleSpinBtn();
+				toggleExitBtn();
+
+				if (globalStats.total_money === 0) {
+					toggleEndGameModal("flex");
+				}
 			}, 1000);
 		};
 	}
 };
 
-const updateTotalMoney = (newAmount) => {
-	playPanelElements.total_money_result().textContent = newAmount;
-};
+const updateGlobalStats = () => {
+	const inputSpinMoney = playPanelElements.input_spin_money().value;
 
-const playWinningsLoader = () => {
-	playPanelElements.spin_result().innerHTML = `<img src="./images/loader.png">`;
-};
+	if (inputSpinMoney > globalStats.total_money) {
+		toggleError(`Not Enough money to place bet!`);
+		return { status: false };
+	}
 
-const toggleSpinBtn = () => {
-	buttons.spinBtn().disabled = !buttons.spinBtn().disabled;
-};
+	globalStats.spin_money = inputSpinMoney;
+	globalStats.total_money -= globalStats.spin_money;
+	globalStats.spin_count += 1;
+	globalStats.total_bet += Number(globalStats.spin_money);
 
-const clearSlots = () => {
-	const slots = document.querySelectorAll(".slot");
-	slots.forEach((slot) => (slot.textContent = null));
+	return { status: true };
 };
 
 const generateRandomNumber = (min = 0, max = 5) => {
