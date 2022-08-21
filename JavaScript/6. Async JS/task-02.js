@@ -17,7 +17,7 @@ const randomizeNumbers = () => {
 const randomizeUniqueNums = () => {
 	const array = [];
 
-	for (array, i = 0; i < 10; ++i) array[i] = i;
+	for (array, i = 0; i < 26; ++i) array[i] = i;
 
 	let tmp;
 	let current;
@@ -32,45 +32,46 @@ const randomizeUniqueNums = () => {
 		}
 	}
 
-	return array;
+	return array.splice(0, 10);
 };
 
 const wordsWar = () => {
 	const letters_player_one = randomizeLetters();
 	const letters_player_two = randomizeLetters();
 
-	const array_player_one = randomizeNumbers();
-	// const array_player_one = randomizeUniqueNums();
-	const array_player_two = randomizeNumbers();
-	// const array_player_two = randomizeUniqueNums();
+	// const array_player_one = randomizeNumbers();
+	const array_player_one = randomizeUniqueNums();
+	// const array_player_two = randomizeNumbers();
+	const array_player_two = randomizeUniqueNums();
 
+	console.log("=======================================================");
 	console.log(`Player 1: ${letters_player_one.join("")}`);
-	console.log(`Player 2: ${letters_player_two.join("")}`);
-
 	console.log(array_player_one);
+	console.log(`Player 2: ${letters_player_two.join("")}`);
 	console.log(array_player_two);
+	console.log("=======================================================");
 
 	for (let i = 0; i < 10; i++) {
-		letters_player_two.splice(letters_player_two[array_player_one[i]], 1);
-
 		console.log(
-			`Player 1 attacked and killed -- ${
+			`Player 1 attacked and killed --${
 				letters_player_two[array_player_one[i]]
-			} -- at position ${array_player_one[i]}`
+			}-- at position ${array_player_one[i]}`
 		);
-
-		letters_player_one.splice(letters_player_one[array_player_two[i]], 1);
 
 		console.log(
-			`Player 2 attacked and killed -- ${
+			`Player 2 attacked and killed --${
 				letters_player_one[array_player_two[i]]
-			} -- at position ${array_player_two[i]}`
+			}-- at position ${array_player_two[i]}`
 		);
+
+		console.log("-------------------------------------------------------");
 	}
 
+	console.log("=======================================================");
 	console.log(`Aftermath:`);
 	console.log(`Player 1: ${letters_player_one.join("")}`);
 	console.log(`Player 2: ${letters_player_two.join("")}`);
+	console.log("=======================================================");
 };
 
 wordsWar();
