@@ -1,5 +1,5 @@
 import globalStats from "./globalVars.js";
-import { playPanelElements } from "./elements.js";
+import { playPanelElements, buttons } from "./elements.js";
 
 const spinMachine = (spin_money, total_money) => {
 	if (total_money) globalStats.total_money = total_money;
@@ -16,6 +16,8 @@ const spinMachine = (spin_money, total_money) => {
 
 	const slots = document.querySelectorAll(".slot");
 	slots.forEach((slot) => (slot.textContent = null));
+
+	buttons.spinBtn().disabled = true;
 
 	if (globalStats.total_money === 0) {
 		// restart game
@@ -80,6 +82,8 @@ const spinMachine = (spin_money, total_money) => {
 					globalStats.total_money;
 
 				playPanelElements.spin_result().textContent = `Winnings: ${winnings}`;
+
+				buttons.spinBtn().disabled = false;
 			}, 1000);
 		};
 	}

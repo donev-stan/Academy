@@ -3,6 +3,8 @@ import { inputElements, errorElements } from "./elements.js";
 const verifyInputData = () => {
 	let isError = false;
 
+	resetErrorElements();
+
 	const name = inputElements.input_name().value;
 	const total_money = Number(inputElements.input_total_money().value);
 	const spin_money = Number(inputElements.input_spin_money().value);
@@ -32,6 +34,12 @@ const verifyInputData = () => {
 			spin_money,
 		},
 	};
+};
+
+const resetErrorElements = () => {
+	errorElements.error_name().textContent = null;
+	errorElements.error_total_money().textContent = null;
+	errorElements.error_spin_money().textContent = null;
 };
 
 export default verifyInputData;
