@@ -10,21 +10,11 @@ const spinMachine = (spin_money, total_money) => {
 
 	globalStats.spin_money = playPanelElements.input_spin_money().value;
 	globalStats.total_money -= globalStats.spin_money;
+	updateTotalMoney(globalStats.total_money);
 
-	playPanelElements.total_money_result().textContent =
-		globalStats.total_money;
-
-	const slots = document.querySelectorAll(".slot");
-	slots.forEach((slot) => (slot.textContent = null));
-
-	buttons.spinBtn().disabled = true;
-
-	if (globalStats.total_money === 0) {
-		// restart game
-	}
-	if (globalStats.total_money < globalStats.spin_money) {
-		// not enough money
-	}
+	clearSlots();
+	toggleSpinBtn();
+	playWinningsLoader();
 
 	const spin = [];
 	let winnings = 0;
@@ -68,7 +58,6 @@ const spinMachine = (spin_money, total_money) => {
 		const displaySymbols = () => {
 			setTimeout(() => {
 				slots[i].innerHTML = symbolsMap[spin[i]];
-
 				i++;
 				if (i < 5) displaySymbols();
 				else displayStats();
@@ -78,15 +67,29 @@ const spinMachine = (spin_money, total_money) => {
 
 		const displayStats = () => {
 			setTimeout(() => {
-				playPanelElements.total_money_result().textContent =
-					globalStats.total_money;
-
-				playPanelElements.spin_result().textContent = `Winnings: ${winnings}`;
-
-				buttons.spinBtn().disabled = false;
+				updateTotalMoney(globalStats.total_money);
+				playPanelElements.spin_result().textContent = `Winnings: ${winnings}$`;
+				toggleSpinBtn();
 			}, 1000);
 		};
 	}
+};
+
+const updateTotalMoney = (newAmount) => {
+	playPanelElements.total_money_result().textContent = newAmount;
+};
+
+const playWinningsLoader = () => {
+	playPanelElements.spin_result().innerHTML = `<img src="./images/loader.png">`;
+};
+
+const toggleSpinBtn = () => {
+	buttons.spinBtn().disabled = !buttons.spinBtn().disabled;
+};
+
+const clearSlots = () => {
+	const slots = document.querySelectorAll(".slot");
+	slots.forEach((slot) => (slot.textContent = null));
 };
 
 const generateRandomNumber = (min = 0, max = 5) => {
