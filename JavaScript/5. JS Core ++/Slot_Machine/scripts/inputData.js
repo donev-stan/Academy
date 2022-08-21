@@ -14,12 +14,12 @@ const verifyInputData = () => {
 		isError = true;
 	}
 
-	if (!total_money) {
+	if (!total_money || total_money < 10) {
 		errorElements.error_total_money().textContent = "Invalid Amount!";
 		isError = true;
 	}
 
-	if (!spin_money || spin_money > total_money) {
+	if (!spin_money || spin_money > total_money || spin_money < 0) {
 		errorElements.error_spin_money().textContent = "Invalid Amount!";
 		isError = true;
 	}

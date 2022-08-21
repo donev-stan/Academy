@@ -83,10 +83,14 @@ const spinMachine = () => {
 };
 
 const updateGlobalStats = () => {
-	const inputSpinMoney = playPanelElements.input_spin_money().value;
+	const inputSpinMoney = Number(playPanelElements.input_spin_money().value);
 
-	if (inputSpinMoney > globalStats.total_money) {
-		toggleError(`Not Enough money to place bet!`);
+	if (
+		!inputSpinMoney ||
+		inputSpinMoney > globalStats.total_money ||
+		inputSpinMoney < 0
+	) {
+		toggleError(`Invalid Bet! Please enter a valid amount!`);
 		return { status: false };
 	}
 
