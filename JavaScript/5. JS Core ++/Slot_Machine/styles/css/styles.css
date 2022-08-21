@@ -202,6 +202,23 @@
     transform: translateX(1px) rotate(0deg);
   }
 }
+@media (max-width: 768px) {
+  .play-panel .container .top-bar .money-box img {
+    display: none;
+  }
+}
+@media (max-width: 568px) {
+  .play-panel .container .top-bar {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  .play-panel .container .top-bar .money-box img {
+    display: none;
+  }
+  .play-panel .container .game-interaction label {
+    display: none;
+  }
+}
 .modal-exit,
 .modal-endGame {
   display: none;
