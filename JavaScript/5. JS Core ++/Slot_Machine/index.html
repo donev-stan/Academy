@@ -5,8 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/favicon.png">
     <link rel="stylesheet" href="./styles/css/styles.css">
-    <script src="./scripts/index.js"></script>
+    <script type="module" src="./scripts/index.js" defer></script>
     <title>Slot Machine</title>
 </head>
 
@@ -14,27 +15,32 @@
     <div id="wrapper">
         <div class="start-panel">
             <div class="container">
-                <form action="">
+                <form id="start-game-form">
                     <div class="form-item">
                         <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" placeholder="Enter name" required>
+                        <input value="Stan" type="text" id="name" name="name" placeholder="Enter name" required>
+                        <label for="name" class="error error-name"></label>
                     </div>
 
                     <div class="form-item">
                         <label for="total-money">Total Money:</label>
-                        <input type="number" id="total-money" name="total-money" placeholder="Enter Your Total Money"
-                            required>
+                        <input value="3000" type="number" id="total-money" name="total-money"
+                            placeholder="Enter Your Total Money" required>
+                        <label for="total-money" class="error error-total-money"></label>
+
                     </div>
 
                     <div class="form-item">
-                        <label for="spin-money">Money Per Spin:</label>
-                        <input type="number" id="spin-money" name="spin-money" placeholder="Enter Money Per Spin"
-                            required>
+                        <label for="spin-money-start">Money Per Spin:</label>
+                        <input value="20" type="number" id="spin-money-start" name="spin-money-start"
+                            placeholder="Enter Money Per Spin" required>
+                        <label for="spin-money" class="error error-spin-money"></label>
+
                     </div>
                 </form>
 
                 <div class="start-btn-box">
-                    <button id="start-game-btn">Start</button>
+                    <button id="start-game-btn">Start Game</button>
                 </div>
             </div>
         </div>
@@ -43,34 +49,30 @@
             <div class="container">
                 <div class="top-bar">
                     <div class="exit-btn-box">
-                        <button> Exit </button>
+                        <button id="exit-game-btn"> Exit </button>
                     </div>
 
                     <div class="money-box">
-                        <p>Total Money: 4500</p>
+                        <p> Total Money: <b><span id="total-money-result">4500</span></b></p>
                     </div>
                 </div>
 
                 <div class="game-box">
-                    <div class="slot"> $ </div>
-                    <div class="slot"> $ </div>
-                    <div class="slot"> $ </div>
-                    <div class="slot"> $ </div>
-                    <div class="slot"> $ </div>
+                    <div class="slot slot-0"> </div>
+                    <div class="slot slot-1"> </div>
+                    <div class="slot slot-2"> </div>
+                    <div class="slot slot-3"> </div>
+                    <div class="slot slot-4"> </div>
                 </div>
 
                 <div class="result-spin-box">
-                    <p class="result-spin"> You won nothing :D </p>
+                    <p class="spin-result"> Spin to win! </p>
                 </div>
 
                 <div class="game-interaction">
-                    <div class="money-spin-box">
-
-                    </div>
-
-                    <div class="spin-btn-box">
-                        <button> Spin </button>
-                    </div>
+                    <label for="spin-money">Money Per Spin:</label>
+                    <input type="number" id="spin-money" name="spin-money" step="10" required>
+                    <button id="spin-btn"> Spin </button>
                 </div>
             </div>
         </div>

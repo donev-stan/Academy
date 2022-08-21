@@ -1,9 +1,13 @@
 @use "./components/start-panel";
+@use "./components/play-panel";
 
 #wrapper {
 	border: 1px solid black;
 	margin: 20px;
 	border-radius: 10px;
+
+	max-width: 1200px;
+	margin: 0 auto;
 }
 
 .container {
@@ -12,4 +16,8 @@
 
 	width: 80%;
 	margin: 0 auto;
+}
+
+.display-play-panel {
+	display: flex;
 }
