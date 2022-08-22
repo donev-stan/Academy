@@ -30,6 +30,27 @@ with_object: {
 
 with_array: {
 	const solve = (cards) => {
+		if (cards.length < 2) {
+			return console.log("Invalid number of cards");
+		}
+
+		let errorWithCards = false;
+
+		cards.forEach((card) => {
+			if (
+				typeof card.color !== "string" ||
+				isNaN(card.number) ||
+				typeof card.shade !== "string" ||
+				typeof card.shape !== "string"
+			) {
+				errorWithCards = true;
+			}
+		});
+
+		if (errorWithCards) {
+			return console.log("Something wrong with a card!");
+		}
+
 		const properties = ["color", "number", "shade", "shape"];
 
 		const allProperties = properties.map((property) =>
@@ -59,4 +80,14 @@ with_array: {
 		{ color: "green", number: 1, shade: "full", shape: "oval" },
 		{ color: "red", number: 3, shade: "full", shape: "oval" },
 	]);
+
+	solve([{ color: "purple", number: 3, shade: "full", shape: "oval" }]);
+
+	solve([
+		{ color: "purple", number: 3, shade: "full", shape: "oval" },
+		{ color: "green", number: "gosho", shade: "full", shape: "oval" },
+		{ color: "red", number: 3, shade: "full", shape: "oval" },
+	]);
 }
+
+console.log(isNaN("gosho"));
