@@ -1,26 +1,59 @@
+import getCoinData from "./getCoinData.js";
+import coinData from "./coinData.js";
+import renderTable from "./renderTable.js";
+
+const elements = {
+	back_btn: () => document.querySelector(".back"),
+	next_btn: () => document.querySelector(".next"),
+
+	info_nav: () => document.querySelector(".info-nav"),
+};
+
 (() => {
-	const url = "https://coinranking1.p.rapidapi.com/coins";
-
-	const options = {
-		method: "GET",
-		params: {
-			referenceCurrencyUuid: "yhjMzLPhuIDl",
-			timePeriod: "24h",
-			"tiers[0]": "1",
-			orderBy: "marketCap",
-			orderDirection: "desc",
-			limit: "50",
-			offset: "0",
-		},
-		headers: {
-			"X-RapidAPI-Key":
-				"3ddf8e2012mshaa0ad9dbe4c09d3p1f1ed0jsnbc4ddc25afa7",
-			"X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
-		},
-	};
-
-	fetch(url, options)
-		.then((response) => response.json())
-		.then((data) => console.log(data?.data?.coins))
-		.catch((error) => console.error(error));
+	elements.back_btn().addEventListener("click", () => navigate(-1));
+	elements.next_btn().addEventListener("click", () => navigate(+1));
 })();
+
+window.onload = async () => {
+	const data = await getCoinData();
+
+	data.forEach((coin, index) => {
+		const page = Math.floor(index / 10);
+
+		if (!coinData.hasOwnProperty(page)) coinData[page] = [];
+
+		coinData[page].push(coin);
+	});
+
+	renderTable(coinData[0]);
+};
+
+const navigate = (index) => {
+	if (index === -1 && coinData.page === 0) return;
+	if (index === +1 && coinData.page === 4) return;
+
+	coinData.page += index;
+
+	renderTable(coinData[coinData.page]);
+
+	displayPage();
+	displayArrows();
+};
+
+const displayPage = () => {
+	elements.info_nav().innerText = coinData.page + 1;
+};
+
+const displayArrows = () => {
+	if (coinData.page === 0) {
+		elements.back_btn().style.opacity = 0.4;
+	} else {
+		elements.back_btn().style.opacity = 1;
+	}
+
+	if (coinData.page === 4) {
+		elements.next_btn().style.opacity = 0.4;
+	} else {
+		elements.next_btn().style.opacity = 1;
+	}
+};
