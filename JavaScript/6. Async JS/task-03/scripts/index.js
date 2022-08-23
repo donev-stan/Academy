@@ -5,21 +5,26 @@ import {
 } from "./getWeatherData.js";
 
 (() => {
-	navigator.geolocation.getCurrentPosition((position) =>
+	navigator.geolocation.getCurrentPosition((position) => {
 		getWeatherDataByCoordinates(
 			position.coords.latitude,
 			position.coords.longitude
 		).then((data) => {
+			console.log(data);
 			renderView(data);
-		})
-	);
+		});
+	});
 
 	document.getElementById("search-btn").addEventListener("click", () => {
-		const search = document.getElementById("search-field");
+		const searchInput = document.getElementById("search-field");
 
-		getWeatherDataByCityName(search.value).then((data) => {
+		let searchValue = searchInput.value.trim();
+
+		if (searchValue === "") searchValue = undefined;
+
+		getWeatherDataByCityName(searchValue).then((data) => {
 			renderView(data);
-			search.value = "";
+			searchInput.value = "";
 		});
 	});
 })();

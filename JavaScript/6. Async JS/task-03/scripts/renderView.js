@@ -11,31 +11,29 @@ const elements = {
 	weather_desc: () => document.getElementById("result-weather-desc"),
 };
 
+const setLoadingView = (message) => {
+	const loadingImg = `<img src="./images/loader.png" class="loader-img">`;
+
+	const errorMsgWithUpperCase =
+		message.split(".")[0].charAt(0).toUpperCase() +
+		message.split(".")[0].slice(1);
+
+	elements.name().innerText = errorMsgWithUpperCase;
+	elements.temp().innerHTML = loadingImg;
+	elements.feels_like().innerHTML = loadingImg;
+	elements.min_temp().innerHTML = loadingImg;
+	elements.max_temp().innerHTML = loadingImg;
+	elements.humidity().innerHTML = loadingImg;
+
+	elements.weather_img().src = chooseWeatherImage("");
+	elements.weather_text().innerHTML = "";
+	elements.weather_desc().innerHTML = "";
+};
+
 const renderView = async (data) => {
 	console.log(data);
 
-	if (data.cod !== 200) {
-		// throw new Error(data.message);
-
-		const loadingImg = `<img src="./images/loader.png" class="loader-img">`;
-
-		const errorMsgWithUpperCase =
-			data.message.split(".")[0].charAt(0).toUpperCase() +
-			data.message.split(".")[0].slice(1);
-
-		elements.name().innerText = errorMsgWithUpperCase;
-		elements.temp().innerHTML = loadingImg;
-		elements.feels_like().innerHTML = loadingImg;
-		elements.min_temp().innerHTML = loadingImg;
-		elements.max_temp().innerHTML = loadingImg;
-		elements.humidity().innerHTML = loadingImg;
-
-		elements.weather_img().src = chooseWeatherImage("");
-		elements.weather_text().innerHTML = "";
-		elements.weather_desc().innerHTML = "";
-
-		return;
-	}
+	if (data.cod !== 200) return setLoadingView(data.message);
 
 	const town_name = data?.name;
 	const { temp, feels_like, temp_min, temp_max, humidity } = data?.main;
@@ -56,13 +54,16 @@ const renderView = async (data) => {
 const chooseWeatherImage = (text) => {
 	switch (text) {
 		case "Clouds":
-			return "./images/cloudy.png";
+			return "./images/cloudy (1).png";
 
 		case "Clear":
-			return "./images/sunny.png";
+			return "./images/clear-sky.png";
 
 		case "Rain":
 			return "./images/rainy.png";
+
+		case "Thunderstorm":
+			return "./images/thunderstorm.png";
 
 		default:
 			return "./images/default.png";

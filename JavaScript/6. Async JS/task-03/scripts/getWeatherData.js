@@ -5,14 +5,17 @@ export const getWeatherDataByCoordinates = (
 	lat = 42.136097,
 	lon = 24.742168
 ) => {
-	return fetch(`${base_url}?lat=${lat}&lon=${lon}&appid=${apiKey}`)
+	return fetch(
+		`${base_url}?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`
+	)
 		.then((response) => response.json())
 		.then((data) => data)
 		.catch((error) => console.error(error));
 };
 
 export const getWeatherDataByCityName = (cityName = "Plovdiv") => {
-	return fetch(`${base_url}?q=${cityName}&appid=${apiKey}`)
+	console.log(cityName);
+	return fetch(`${base_url}?q=${cityName}&appid=${apiKey}&units=metric`)
 		.then((response) => response.json())
 		.then((data) => data)
 		.catch((error) => console.error(error));
