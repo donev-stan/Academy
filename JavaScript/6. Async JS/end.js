@@ -181,7 +181,7 @@ const lettersBattle = async () => {
 					: "Player 2"
 			}`
 		);
-		console.log("==========================\n\n\n");
+		console.log("==========================");
 	}
 
 	logPreparation();
