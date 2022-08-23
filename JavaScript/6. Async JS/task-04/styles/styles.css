@@ -44,11 +44,12 @@ td {
 	border-bottom: 1px solid black;
 
 	height: 50px;
-}
-
-td:not(:first-child) {
 	width: 200px;
 }
+
+/* td:not(:first-child) {
+	width: 200px;
+} */
 
 td img {
 	margin-bottom: -5px;
