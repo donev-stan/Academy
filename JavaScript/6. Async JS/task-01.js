@@ -1,5 +1,24 @@
+const checkValidCard = (card) => {
+	const value =
+		typeof card.color === "string" &&
+		!isNaN(card.number) &&
+		typeof card.shade === "string" &&
+		typeof card.shape === "string";
+
+	return value;
+};
+
 with_object: {
 	const solve = (cards) => {
+		input_verify: {
+			if (cards.length < 2) return console.log("Invalid number of cards");
+
+			const errorWithCards = !cards.every((card) => checkValidCard(card));
+
+			if (errorWithCards)
+				return console.log("Something wrong with a card!");
+		}
+
 		const allProperties = {
 			colors: [],
 			numbers: [],
@@ -30,25 +49,13 @@ with_object: {
 
 with_array: {
 	const solve = (cards) => {
-		if (cards.length < 2) {
-			return console.log("Invalid number of cards");
-		}
+		input_verify: {
+			if (cards.length < 2) return console.log("Invalid number of cards");
 
-		let errorWithCards = false;
+			const errorWithCards = !cards.every((card) => checkValidCard(card));
 
-		cards.forEach((card) => {
-			if (
-				typeof card.color !== "string" ||
-				isNaN(card.number) ||
-				typeof card.shade !== "string" ||
-				typeof card.shape !== "string"
-			) {
-				errorWithCards = true;
-			}
-		});
-
-		if (errorWithCards) {
-			return console.log("Something wrong with a card!");
+			if (errorWithCards)
+				return console.log("Something wrong with a card!");
 		}
 
 		const properties = ["color", "number", "shade", "shape"];
@@ -69,19 +76,19 @@ with_array: {
 		console.log(cards, "=>", isSameDeck);
 	};
 
-	solve([
-		{ color: "green", number: 1, shade: "empty", shape: "squiggle" },
-		{ color: "green", number: 2, shade: "empty", shape: "diamond" },
-		{ color: "green", number: 3, shade: "empty", shape: "oval" },
-	]);
+	// solve([
+	// 	{ color: "green", number: 1, shade: "empty", shape: "squiggle" },
+	// 	{ color: "green", number: 2, shade: "empty", shape: "diamond" },
+	// 	{ color: "green", number: 3, shade: "empty", shape: "oval" },
+	// ]);
 
-	solve([
-		{ color: "purple", number: 3, shade: "full", shape: "oval" },
-		{ color: "green", number: 1, shade: "full", shape: "oval" },
-		{ color: "red", number: 3, shade: "full", shape: "oval" },
-	]);
+	// solve([
+	// 	{ color: "purple", number: 3, shade: "full", shape: "oval" },
+	// 	{ color: "green", number: 1, shade: "full", shape: "oval" },
+	// 	{ color: "red", number: 3, shade: "full", shape: "oval" },
+	// ]);
 
-	solve([{ color: "purple", number: 3, shade: "full", shape: "oval" }]);
+	// solve([{ color: "purple", number: 3, shade: "full", shape: "oval" }]);
 
 	solve([
 		{ color: "purple", number: 3, shade: "full", shape: "oval" },
@@ -90,4 +97,4 @@ with_array: {
 	]);
 }
 
-console.log(isNaN("gosho"));
+// Избирам втория метод за решаване (with_array)
