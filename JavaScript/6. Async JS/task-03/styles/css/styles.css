@@ -67,40 +67,41 @@
   padding: 50px 50px;
   display: flex;
 }
-.main .left,
-.main .right {
+.main .saved,
+.main .info-text,
+.main .info-img {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.main .left .all-data {
+.main .info-text .all-data {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   gap: 20px;
   font-size: 1.2rem;
 }
-.main .left .all-data .data-box {
+.main .info-text .all-data .data-box {
   display: flex;
   gap: 15px;
 }
-.main .left .all-data .data-box i {
+.main .info-text .all-data .data-box i {
   width: 20px;
 }
-.main .left .all-data .data-box div {
+.main .info-text .all-data .data-box div {
   display: flex;
   gap: 17px;
 }
-.main .left .all-data .data-box .loader-img {
+.main .info-text .all-data .data-box .loader-img {
   width: 25px;
   animation: rotation 1.5s infinite linear;
 }
-.main .right {
+.main .info-img {
   text-align: center;
 }
-.main .right #result-weather-text {
+.main .info-img #result-weather-text {
   margin: 10px 0;
   font-size: 1.3rem;
 }

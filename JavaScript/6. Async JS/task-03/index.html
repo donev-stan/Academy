@@ -1,95 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./images/logo.png">
-    <link rel="stylesheet" href="./styles/css/styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./images/logo.png" />
+    <link rel="stylesheet" href="./styles/css/styles.css" />
     <script src="https://requirejs.org/docs/release/2.3.5/minified/require.js"></script>
     <script type="module" src="./scripts/index.js"></script>
 
-    <link rel="image_src" href="./images/default.png">
+    <link rel="image_src" href="./images/default.png" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
-        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+      integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
     <title>Weather App</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div id="wrapper">
-        <div class="container">
-            <div class="search-menu">
-                <div class="search-field-box">
-                    <input type="text" id="search-field">
-                </div>
+      <div class="container">
+        <div class="search-menu">
+          <div class="search-field-box">
+            <input type="text" id="search-field" />
+          </div>
 
-                <div class="search-btn-box">
-                    <button id="search-btn">Search</button>
-                </div>
-            </div>
-
-            <div class="main">
-                <div class="left">
-
-                    <div class="all-data">
-
-                        <div class="data-box">
-                            <h2 id="town-name">Unknown</h2>
-                        </div>
-
-                        <div class="data-box">
-                            <div><i class="fa-solid fa-temperature-half"></i> Current Temperature: </div>
-                            <div id="result-curr-temp"> <img src="./images/loader.png" alt="loader" class="loader-img">
-                            </div>
-                        </div>
-
-                        <div class="data-box">
-                            <div><i class="fa-solid fa-temperature-high"></i> Feels Like: </div>
-                            <div id="result-feelslike-temp"> <img src="./images/loader.png" alt="loader"
-                                    class="loader-img">
-                            </div>
-                        </div>
-
-                        <div class="data-box">
-                            <div><i class="fa-solid fa-temperature-arrow-down"></i> Minimum Temperature: </div>
-                            <div id="result-min-temp"> <img src="./images/loader.png" alt="loader" class="loader-img">
-                            </div>
-                        </div>
-
-                        <div class="data-box">
-                            <div><i class="fa-solid fa-temperature-arrow-up"></i> Maximum Temperature: </div>
-                            <div id="result-max-temp"> <img src="./images/loader.png" alt="loader" class="loader-img">
-                            </div>
-                        </div>
-
-                        <div class="data-box">
-                            <div><i class="fa-solid fa-droplet"></i> Humidity: </div>
-                            <div id="result-humidity"> <img src="./images/loader.png" alt="loader" class="loader-img">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="right">
-                    <div id="result-img-weather">
-                        <img src="./images/default.png" alt="" width="160px" id="weather-img">
-                        <div id="result-weather-text">
-
-                        </div>
-
-                        <div id="result-weather-desc">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <div class="search-btn-box">
+            <button id="search-btn">Search</button>
+          </div>
         </div>
-    </div>
-</body>
 
+        <div class="main">
+          <div class="info-text">
+            <div class="all-data">
+              <div class="data-box">
+                <h2 id="town-name">Unknown</h2>
+              </div>
+
+              <div class="data-box">
+                <div>
+                  <i class="fa-solid fa-temperature-half"></i> Current
+                  Temperature:
+                </div>
+                <div id="result-curr-temp">
+                  <img
+                    src="./images/loader.png"
+                    alt="loader"
+                    class="loader-img"
+                  />
+                </div>
+              </div>
+
+              <div class="data-box">
+                <div>
+                  <i class="fa-solid fa-temperature-high"></i> Feels Like:
+                </div>
+                <div id="result-feelslike-temp">
+                  <img
+                    src="./images/loader.png"
+                    alt="loader"
+                    class="loader-img"
+                  />
+                </div>
+              </div>
+
+              <div class="data-box">
+                <div>
+                  <i class="fa-solid fa-temperature-arrow-down"></i> Minimum
+                  Temperature:
+                </div>
+                <div id="result-min-temp">
+                  <img
+                    src="./images/loader.png"
+                    alt="loader"
+                    class="loader-img"
+                  />
+                </div>
+              </div>
+
+              <div class="data-box">
+                <div>
+                  <i class="fa-solid fa-temperature-arrow-up"></i> Maximum
+                  Temperature:
+                </div>
+                <div id="result-max-temp">
+                  <img
+                    src="./images/loader.png"
+                    alt="loader"
+                    class="loader-img"
+                  />
+                </div>
+              </div>
+
+              <div class="data-box">
+                <div><i class="fa-solid fa-droplet"></i> Humidity:</div>
+                <div id="result-humidity">
+                  <img
+                    src="./images/loader.png"
+                    alt="loader"
+                    class="loader-img"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="info-img">
+            <div id="result-img-weather">
+              <img
+                src="./images/default.png"
+                alt=""
+                width="160px"
+                id="weather-img"
+              />
+              <div id="result-weather-text"></div>
+
+              <div id="result-weather-desc"></div>
+            </div>
+          </div>
+
+          <div class="saved">
+            <div class="heading">
+              <h2>Saved</h2>
+            </div>
+            <h3>Plovdiv</h3>
+            <h3>Sofia</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

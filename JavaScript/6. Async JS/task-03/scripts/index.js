@@ -1,30 +1,30 @@
 import renderView from "./renderView.js";
 import {
-	getWeatherDataByCityName,
-	getWeatherDataByCoordinates,
+  getWeatherDataByCityName,
+  getWeatherDataByCoordinates,
 } from "./getWeatherData.js";
 
 (() => {
-	navigator.geolocation.getCurrentPosition((position) => {
-		getWeatherDataByCoordinates(
-			position.coords.latitude,
-			position.coords.longitude
-		).then((data) => {
-			console.log(data);
-			renderView(data);
-		});
-	});
+  navigator.geolocation.getCurrentPosition((position) => {
+    getWeatherDataByCoordinates(
+      position.coords.latitude,
+      position.coords.longitude
+    ).then((data) => {
+      console.log(data);
+      renderView(data);
+    });
+  });
 
-	document.getElementById("search-btn").addEventListener("click", () => {
-		const searchInput = document.getElementById("search-field");
+  document.getElementById("search-btn").addEventListener("click", () => {
+    const searchInput = document.getElementById("search-field");
 
-		let searchValue = searchInput.value.trim();
+    let searchValue = searchInput.value.trim();
 
-		if (searchValue === "") searchValue = undefined;
+    if (searchValue === "") searchValue = undefined;
 
-		getWeatherDataByCityName(searchValue).then((data) => {
-			renderView(data);
-			searchInput.value = "";
-		});
-	});
+    getWeatherDataByCityName(searchValue).then((data) => {
+      renderView(data);
+      searchInput.value = "";
+    });
+  });
 })();

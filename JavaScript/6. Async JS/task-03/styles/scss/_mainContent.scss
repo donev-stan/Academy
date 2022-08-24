@@ -3,8 +3,9 @@
 
 	display: flex;
 
-	.left,
-	.right {
+	.saved,
+	.info-text,
+	.info-img {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
@@ -12,7 +13,7 @@
 		justify-content: center;
 	}
 
-	.left {
+	.info-text {
 		.all-data {
 			display: flex;
 			flex-direction: column;
@@ -41,7 +42,7 @@
 		}
 	}
 
-	.right {
+	.info-img {
 		text-align: center;
 
 		#result-weather-text {
