@@ -18,10 +18,10 @@ const options = {
 };
 
 // const getCoinData = () => {
-// 	return fetch(url, options)
-// 		.then((response) => response.json())
-// 		.then((data) => data?.data?.coins)
-// 		.catch((error) => console.error(error));
+//   return fetch(url, options)
+//     .then((response) => response.json())
+//     .then((data) => data?.data?.coins)
+//     .catch((error) => console.error(error));
 // };
 
 const getCoinData = async () => {
