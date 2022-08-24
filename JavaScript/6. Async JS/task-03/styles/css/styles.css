@@ -73,6 +73,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 .main .saved-box .saved {
   display: flex;

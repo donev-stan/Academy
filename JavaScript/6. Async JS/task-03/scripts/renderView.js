@@ -41,6 +41,7 @@ const renderSaved = (town_name) => {
 };
 
 const renderView = (data) => {
+  console.log(data);
   if (data.cod !== 200) return setLoadingView(data.message);
 
   const town_name = data?.name;
@@ -63,7 +64,7 @@ const renderView = (data) => {
 const chooseWeatherImage = (text) => {
   switch (text) {
     case "Clouds":
-      return "./images/cloudy (1).png";
+      return "./images/cloudy.png";
 
     case "Clear":
       return "./images/clear-sky.png";
