@@ -9,6 +9,7 @@ const setLoadingView = (message) => {
     message.split(".")[0].charAt(0).toUpperCase() +
     message.split(".")[0].slice(1);
 
+  elements.saveIcon().src = "./images/error.png";
   elements.name().innerText = errorMsgWithUpperCase;
   elements.temp().innerHTML = loadingImg;
   elements.feels_like().innerHTML = loadingImg;
