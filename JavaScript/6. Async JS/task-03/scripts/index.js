@@ -37,6 +37,7 @@ window.onload = () => {
 
   elements.saveIcon().addEventListener("click", () => {
     const current_town = elements.name().textContent;
+    if (current_town === "City not found") return;
 
     if (savedTowns.includes(current_town)) {
       const indexOfCurrentTown = savedTowns.indexOf(current_town);

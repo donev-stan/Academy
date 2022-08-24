@@ -41,7 +41,6 @@ const renderSaved = (town_name) => {
 };
 
 const renderView = (data) => {
-  console.log(data);
   if (data.cod !== 200) return setLoadingView(data.message);
 
   const town_name = data?.name;
