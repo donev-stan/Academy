@@ -1,15 +1,6 @@
-const elements = {
-  name: () => document.getElementById("town-name"),
-  temp: () => document.getElementById("result-curr-temp"),
-  feels_like: () => document.getElementById("result-feelslike-temp"),
-  min_temp: () => document.getElementById("result-min-temp"),
-  max_temp: () => document.getElementById("result-max-temp"),
-  humidity: () => document.getElementById("result-humidity"),
-
-  weather_img: () => document.getElementById("weather-img"),
-  weather_text: () => document.getElementById("result-weather-text"),
-  weather_desc: () => document.getElementById("result-weather-desc"),
-};
+import elements from "./elements.js";
+import { getWeatherDataByCityName } from "./getWeatherData.js";
+import savedTowns from "./savedTowns.js";
 
 const setLoadingView = (message) => {
   const loadingImg = `<img src="./images/loader.png" class="loader-img">`;
@@ -30,15 +21,33 @@ const setLoadingView = (message) => {
   elements.weather_desc().innerHTML = "";
 };
 
-const renderView = (data) => {
-  console.log(data);
+const renderSaved = (town_name) => {
+  elements.saveIcon().src = savedTowns.includes(town_name)
+    ? `./images/saved.png`
+    : `./images/save.png`;
 
+  const saved_div = document.querySelector(".saved");
+  saved_div.innerHTML = "";
+
+  savedTowns.forEach((town) => {
+    const town_h3 = document.createElement("h3");
+    town_h3.innerText = `${town}`;
+    town_h3.addEventListener("click", () => {
+      getWeatherDataByCityName(town).then((data) => renderView(data));
+    });
+
+    saved_div.appendChild(town_h3);
+  });
+};
+
+const renderView = (data) => {
   if (data.cod !== 200) return setLoadingView(data.message);
 
   const town_name = data?.name;
   const { temp, feels_like, temp_min, temp_max, humidity } = data?.main;
   const { main: weather_text, description } = data?.weather[0];
 
+  renderSaved(town_name);
   elements.name().innerText = town_name;
   elements.temp().innerText = `${String(temp).slice(0, 2)} ℃`;
   elements.feels_like().innerText = `${String(feels_like).slice(0, 2)} ℃`;
@@ -70,4 +79,4 @@ const chooseWeatherImage = (text) => {
   }
 };
 
-export default renderView;
+export { renderView, renderSaved };

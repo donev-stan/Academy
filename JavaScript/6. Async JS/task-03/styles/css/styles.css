@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
 @media (max-width: 850px) {
   #wrapper .container .main .right {
     align-items: flex-end;
@@ -67,10 +68,30 @@
   padding: 50px 50px;
   display: flex;
 }
-.main .saved,
+.main .saved-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main .saved-box .saved {
+  display: flex;
+  margin: 15px 0;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main .saved-box .saved h3 {
+  background-color: rgb(209, 252, 252);
+  padding: 5px 15px;
+  border: 1px solid black;
+  border-radius: 8px;
+  cursor: pointer;
+}
 .main .info-text,
 .main .info-img {
-  flex: 1;
+  flex: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,7 +106,13 @@
 }
 .main .info-text .all-data .data-box {
   display: flex;
+  align-items: center;
   gap: 15px;
+}
+.main .info-text .all-data .data-box img {
+  width: 20px;
+  height: 22px;
+  cursor: pointer;
 }
 .main .info-text .all-data .data-box i {
   width: 20px;
@@ -117,6 +144,11 @@
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  font-family: "Roboto Slab", serif;
+  font-size: 1rem;
 }
 
 .container {

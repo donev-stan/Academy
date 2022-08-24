@@ -3,10 +3,33 @@
 
 	display: flex;
 
-	.saved,
+	.saved-box {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.saved {
+			display: flex;
+			margin: 15px 0;
+			gap: 10px;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			h3{
+				background-color:rgb(209, 252, 252);
+				padding: 5px 15px;
+				border: 1px solid black;
+				border-radius: 8px;
+				cursor: pointer;
+			}
+		}
+	}
+
 	.info-text,
 	.info-img {
-		flex: 1;
+		flex: 2;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -23,7 +46,15 @@
 
 			.data-box {
 				display: flex;
+				// justify-content: center;
+				align-items: center;
 				gap: 15px;
+
+				img {
+					width: 20px;
+					height: 22px;
+					cursor: pointer;
+				}
 
 				i {
 					width: 20px;
