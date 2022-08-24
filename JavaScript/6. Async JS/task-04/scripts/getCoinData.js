@@ -30,7 +30,6 @@ const getCoinData = async () => {
     const data = await response.json();
     return data?.data?.coins;
   } catch (error) {
-    return error;
     console.error(error);
   }
 };
