@@ -50,7 +50,8 @@ with_object: {
 with_array: {
 	const solve = (cards) => {
 		input_verify: {
-			if (cards.length < 2) return console.log("Invalid number of cards");
+			if (cards.length < 2)
+				return console.log("Invalid number of cards!");
 
 			const errorWithCards = !cards.every((card) => checkValidCard(card));
 
@@ -76,19 +77,19 @@ with_array: {
 		console.log(cards, "=>", isSameDeck);
 	};
 
-	// solve([
-	// 	{ color: "green", number: 1, shade: "empty", shape: "squiggle" },
-	// 	{ color: "green", number: 2, shade: "empty", shape: "diamond" },
-	// 	{ color: "green", number: 3, shade: "empty", shape: "oval" },
-	// ]);
+	solve([
+		{ color: "green", number: 1, shade: "empty", shape: "squiggle" },
+		{ color: "green", number: 2, shade: "empty", shape: "diamond" },
+		{ color: "green", number: 3, shade: "empty", shape: "oval" },
+	]);
 
-	// solve([
-	// 	{ color: "purple", number: 3, shade: "full", shape: "oval" },
-	// 	{ color: "green", number: 1, shade: "full", shape: "oval" },
-	// 	{ color: "red", number: 3, shade: "full", shape: "oval" },
-	// ]);
+	solve([
+		{ color: "purple", number: 3, shade: "full", shape: "oval" },
+		{ color: "green", number: 1, shade: "full", shape: "oval" },
+		{ color: "red", number: 3, shade: "full", shape: "oval" },
+	]);
 
-	// solve([{ color: "purple", number: 3, shade: "full", shape: "oval" }]);
+	solve([{ color: "purple", number: 3, shade: "full", shape: "oval" }]);
 
 	solve([
 		{ color: "purple", number: 3, shade: "full", shape: "oval" },
