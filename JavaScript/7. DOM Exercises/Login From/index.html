@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="./favicon.png" />
+  <link rel="image_src" href="./favicon.png" />
+  <link rel="stylesheet" href="./styles/css/styles.css" />
+  <script type="module" src="./scripts/index.js"></script>
+  <title>Login Demo</title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div class="login unselectable">
+      <div class="container">
+        <form>
+          <div class="username-box">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter username" />
+            <p class="username-error-msg">Invalid Username!</p>
+          </div>
+
+          <div class="password-box">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter password" onKeyDown="if(event.keyCode === 32)
+                return false;" />
+            <p class="password-error-msg">Invalid Password!</p>
+          </div>
+
+          <div class="terms-and-conditions-box">
+            <div class="terms-and-conditions-container">
+              <input type="checkbox" id="terms-and-conditions" name="terms-and-conditions" />
+              <label for="terms-and-conditions">I agree to the terms and conditions!</label>
+            </div>
+            <div class="terms-error-msg-box">
+              <p class="terms-error-msg">
+                Please check the terms and conditions!
+              </p>
+            </div>
+          </div>
+
+          <div class="login-btn-box">
+            <button id="login-btn">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

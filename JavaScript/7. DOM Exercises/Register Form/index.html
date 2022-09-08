@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="./favicon.png" />
+  <link rel="image_src" href="./favicon.png" />
+  <link rel="stylesheet" href="./styles/css/styles.css" />
+  <script type="module" src="./scripts/index.js"></script>
+  <title>Register Demo</title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div class="register-form-box unselectable">
+      <form>
+        <div class="first-name-box">
+          <label for="first-name">First Name: </label>
+          <input type="text" name="first-name" id="first-name" onKeyDown="if(event.keyCode === 32) return false;" />
+          <p class="first-name-error-msg">Invalid First Name! Cannot be empty.</p>
+        </div>
+
+        <div class="last-name-box">
+          <label for="last-name">Last Name:</label>
+          <input type="text" name="last-name" id="last-name" onKeyDown="if(event.keyCode === 32) return false;" />
+          <p class="last-name-error-msg">Invalid Last Name! Cannot be empty.</p>
+        </div>
+
+        <div class="tel-box">
+          <label for="tel">Telephone:</label>
+          <input type="text" name="tel" id="tel" onKeyDown="if(event.keyCode === 32) return false;" />
+          <p class="tel-error-msg">Invalid Telephone Number! Should only contain numbers.</p>
+        </div>
+
+        <div class="zip-box">
+          <label for="zip">ZIP Code:</label>
+          <input type="text" name="zip" id="zip" onKeyDown="if(event.keyCode === 32) return false;" />
+          <p class="zip-error-msg">Invalid ZIP Code! Should only contain numbers.</p>
+        </div>
+
+        <div class="country-box">
+          <label for="country">Country:</label>
+          <input type="text" name="country" id="country" onKeyDown="if(event.keyCode === 32) return false;" />
+          <p class="country-error-msg">Invalid Country!</p>
+        </div>
+
+        <div class="register-btn-box">
+          <button id="register-btn">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
